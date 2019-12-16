@@ -6,6 +6,7 @@ import { GlobalStyles } from './components/styled-components/GlobalStyles';
 import { landscapes, nudes, portraits } from './data/Photos';
 import Gallery from 'react-photo-gallery';
 import { Wrapper } from './components/styled-components/Wrapper';
+import NotFound from './components/NotFound';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
             path="/landschaftsfotografie"
             render={() => <Gallery photos={landscapes} />}
           />
+          <Route component={NotFound} />
         </Switch>
       </Wrapper>
       <Footer />
