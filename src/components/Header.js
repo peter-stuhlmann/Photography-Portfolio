@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import MainNavigation from './MainNavigation/MainNavigation';
 
 export default function Header() {
   return (
@@ -9,6 +10,7 @@ export default function Header() {
         <Link to="/">Peter R. Stuhlmann Fotografie</Link>
         <p>People- und Landschaftsfotografie aus Berlin</p>
       </div>
+      <MainNavigation />
     </StyledHeader>
   );
 }
