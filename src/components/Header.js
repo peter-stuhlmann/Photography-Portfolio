@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Context } from '../Context';
 import styled from 'styled-components';
 import MainNavigation from './MainNavigation/MainNavigation';
 
 export default function Header() {
+  const { text } = useContext(Context);
+
   return (
     <StyledHeader>
       <div className="site-title">
-        <Link to="/">Peter R. Stuhlmann Fotografie</Link>
-        <p>People- und Landschaftsfotografie aus Berlin</p>
+        <Link to="/">{text.header.siteTitle}</Link>
+        <p>{text.header.siteDescription}</p>
       </div>
       <MainNavigation />
     </StyledHeader>

@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { Context } from '../../Context';
 import ToggleButton from './ToggleButton';
 import Navbar from './Navbar';
 
@@ -20,6 +21,8 @@ const useOnClickOutside = (ref, handler) => {
 };
 
 export default function MainNavigation() {
+  const { text } = useContext(Context);
+
   const [open, setOpen] = useState(false);
 
   const node = useRef();
@@ -30,7 +33,7 @@ export default function MainNavigation() {
       <ToggleButton open={open} setOpen={setOpen} />
       <Navbar open={open} setOpen={setOpen} />
       <div className="site-title-mobile">
-        <Link to="/">Peter R. Stuhlmann Fotografie</Link>
+        <Link to="/">{text.header.siteTitle}</Link>
       </div>
     </StyledMainNavigation>
   );

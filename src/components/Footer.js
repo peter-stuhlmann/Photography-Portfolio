@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Context } from '../Context';
 import styled from 'styled-components';
 
 export default function Footer() {
+  const { text } = useContext(Context);
+
   return (
     <StyledFooter>
       <div>
         <p>
-          <Link to="/">&copy; Peter R. Stuhlmann Fotografie</Link>, 2019
+          <Link to="/">&copy; {text.subFooter.copyright}</Link>, 2019
         </p>
         <nav>
-          <Link to="/impressum">Impressum</Link>
-          <Link to="/datenschutzerklaerung">Datenschutzerklärung</Link>
+          <Link to={text.subFooter.navigation[0].href}>
+            {text.subFooter.navigation[0].linkText}
+          </Link>
+          <Link to={text.subFooter.navigation[1].href}>
+            {text.subFooter.navigation[1].linkText}
+          </Link>
         </nav>
       </div>
     </StyledFooter>
