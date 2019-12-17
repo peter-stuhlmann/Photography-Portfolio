@@ -9,6 +9,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import NotFound from './components/NotFound';
+import LegalNotice from './components/LegalNotice';
 
 export default function App() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
               render={() => <Gallery photos={landscapes} />}
             />
             <Route exact path="/ueber-mich" component={About} />
+            <Route exact path="/impressum" component={LegalNotice} />
             <Route component={NotFound} />
           </Switch>
         </Wrapper>
