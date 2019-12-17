@@ -1,13 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Gallery from 'react-photo-gallery';
+import ContextProvider from './Context';
+import { GlobalStyles } from './components/styled-components/GlobalStyles';
+import { Wrapper } from './components/styled-components/Wrapper';
+import { landscapes, nudes, portraits } from './data/Photos';
+import About from './components/About';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import { GlobalStyles } from './components/styled-components/GlobalStyles';
-import { landscapes, nudes, portraits } from './data/Photos';
-import Gallery from 'react-photo-gallery';
-import { Wrapper } from './components/styled-components/Wrapper';
 import NotFound from './components/NotFound';
-import ContextProvider from './Context';
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
               path="/landschaftsfotografie"
               render={() => <Gallery photos={landscapes} />}
             />
+            <Route exact path="/ueber-mich" component={About} />
             <Route component={NotFound} />
           </Switch>
         </Wrapper>
