@@ -1,33 +1,46 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Context } from '../Context';
 import { UL } from './styled-components/List';
 
 export default function NotFound() {
+  const { text } = useContext(Context);
+
   return (
     <Fragment>
-      <h1>Die Seite wurde nicht gefunden...</h1>
+      <h1>{text.notFound.heading}</h1>
       <p>
-        Suchst Du eine der folgenden Seiten?
+        {text.notFound.list.heading}
         <UL>
           <li>
-            <Link to="/">Portraits</Link>
-          </li>
-          <li>
-            <Link to="/akt">Akt &amp; Erotik</Link>
-          </li>
-          <li>
-            <Link to="/landschaftsfotografie">
-              Landschafts- und Architekturfotografie
+            <Link to={text.notFound.list.links[0].href}>
+              {text.notFound.list.links[0].linkText}
             </Link>
           </li>
           <li>
-            <Link to="/ueber-mich">Über mich</Link>
+            <Link to={text.notFound.list.links[1].href}>
+              {text.notFound.list.links[1].linkText}
+            </Link>
           </li>
           <li>
-            <Link to="/blog">Blog</Link>
+            <Link to={text.notFound.list.links[2].href}>
+              {text.notFound.list.links[2].linkText}
+            </Link>
           </li>
           <li>
-            <Link to="/kontakt">Kontakt</Link>
+            <Link to={text.notFound.list.links[3].href}>
+              {text.notFound.list.links[3].linkText}
+            </Link>
+          </li>
+          <li>
+            <Link to={text.notFound.list.links[4].href}>
+              {text.notFound.list.links[4].linkText}
+            </Link>
+          </li>
+          <li>
+            <Link to={text.notFound.list.links[5].href}>
+              {text.notFound.list.links[5].linkText}
+            </Link>
           </li>
         </UL>
       </p>
