@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import NotFound from './components/NotFound';
 import LegalNotice from './components/LegalNotice';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 export default function App() {
   return (
@@ -36,6 +37,11 @@ export default function App() {
             />
             <Route exact path="/ueber-mich" component={About} />
             <Route exact path="/impressum" component={LegalNotice} />
+            <Route
+              exact
+              path="/datenschutzerklaerung"
+              component={PrivacyPolicy}
+            />
             <Route component={NotFound} />
           </Switch>
         </Wrapper>

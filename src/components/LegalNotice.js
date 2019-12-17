@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from 'react';
 import { Context } from '../Context';
 
-export default function About() {
+export default function LegalNotice() {
   const { text } = useContext(Context);
 
   return (
