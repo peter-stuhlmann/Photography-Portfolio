@@ -7,25 +7,36 @@ import { landscapes, nudes, portraits } from './data/Photos';
 import Gallery from 'react-photo-gallery';
 import { Wrapper } from './components/styled-components/Wrapper';
 import NotFound from './components/NotFound';
+import ContextProvider from './Context';
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <GlobalStyles />
-      <Header />
-      <Wrapper>
-        <Switch>
-          <Route exact path="/" render={() => <Gallery photos={portraits} />} />
-          <Route exact path="/akt" render={() => <Gallery photos={nudes} />} />
-          <Route
-            exact
-            path="/landschaftsfotografie"
-            render={() => <Gallery photos={landscapes} />}
-          />
-          <Route component={NotFound} />
-        </Switch>
-      </Wrapper>
-      <Footer />
-    </BrowserRouter>
+    <ContextProvider>
+      <BrowserRouter>
+        <GlobalStyles />
+        <Header />
+        <Wrapper>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => <Gallery photos={portraits} />}
+            />
+            <Route
+              exact
+              path="/akt"
+              render={() => <Gallery photos={nudes} />}
+            />
+            <Route
+              exact
+              path="/landschaftsfotografie"
+              render={() => <Gallery photos={landscapes} />}
+            />
+            <Route component={NotFound} />
+          </Switch>
+        </Wrapper>
+        <Footer />
+      </BrowserRouter>
+    </ContextProvider>
   );
 }
