@@ -7,6 +7,7 @@ import { Wrapper } from './components/styled-components/Wrapper';
 import About from './components/About';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import Contact from './components/Contact';
 import NotFound from './components/NotFound';
 import LegalNotice from './components/LegalNotice';
 import PrivacyPolicy from './components/PrivacyPolicy';
@@ -49,6 +50,7 @@ export default function App() {
                 )
               }
             />
+            <Route exact path="/kontakt" component={Contact} />
             <Route exact path="/ueber-mich" component={About} />
             <Route exact path="/impressum" component={LegalNotice} />
             <Route
