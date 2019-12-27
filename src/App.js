@@ -5,13 +5,14 @@ import ContextProvider from './Context';
 import { GlobalStyles } from './components/styled-components/GlobalStyles';
 import { Wrapper } from './components/styled-components/Wrapper';
 import About from './components/About';
-import Footer from './components/Footer';
+import SubFooter from './components/SubFooter';
 import Header from './components/Header';
 import Contact from './components/Contact';
 import NotFound from './components/NotFound';
 import LegalNotice from './components/LegalNotice';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import { landscapes, nudes, portraits } from './data/Photos';
+import Prices from './components/Prices';
 
 export default function App() {
   return (
@@ -51,6 +52,7 @@ export default function App() {
               }
             />
             <Route exact path="/kontakt" component={Contact} />
+            <Route exact path="/preise" component={Prices} />
             <Route exact path="/ueber-mich" component={About} />
             <Route exact path="/impressum" component={LegalNotice} />
             <Route
@@ -61,7 +63,7 @@ export default function App() {
             <Route component={NotFound} />
           </Switch>
         </Wrapper>
-        <Footer />
+        <SubFooter />
       </BrowserRouter>
     </ContextProvider>
   );
