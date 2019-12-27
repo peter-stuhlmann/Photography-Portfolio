@@ -63,6 +63,21 @@ export const text = {
   },
   contact: {
     heading: 'Kontakt',
+    data: [
+      'Adresse: Martha-Arendsee-Str. 10, 12681 Berlin',
+      'Mobil: +49 (0) 1575 85630944',
+      'E-Mail: info@peter-stuhlmann.de',
+    ],
+    text: [
+      'Deine Fragen und Anmerkungen sind jederzeit willkommen.',
+      'Wenn Du ein Shooting bei mir buchen möchtest, benötige ich dazu bitte folgende Informationen:',
+      'Je mehr Infos Du mir gibst, desto detaillierter kann ich auf Deine Wünsche eingehen und das Angebot schreiben. Gerne kannst Du Dir auch schon eines meiner vorgefertigten Pakete aussuchen.',
+    ],
+    list: [
+      'Art des Shootings (z.B. Portrait- oder Aktaufnahmen)',
+      'Ort (im Studio, bei Dir oder einer anderen Location, outdoor)',
+      'Anzahl der Personen',
+    ],
   },
   legalNotice: {
     heading: 'Impressum',
