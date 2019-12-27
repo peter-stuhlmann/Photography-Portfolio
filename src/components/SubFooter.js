@@ -13,12 +13,11 @@ export default function SubFooter() {
           <Link to="/">&copy; {text.subFooter.copyright}</Link>, 2019
         </p>
         <nav>
-          <Link to={text.subFooter.navigation[0].href}>
-            {text.subFooter.navigation[0].linkText}
-          </Link>
-          <Link to={text.subFooter.navigation[1].href}>
-            {text.subFooter.navigation[1].linkText}
-          </Link>
+          {text.subFooter.navigation.map(links => (
+            <Link key={links.href} to={links.href}>
+              {links.linkText}
+            </Link>
+          ))}
         </nav>
       </div>
     </StyledSubFooter>
