@@ -29,6 +29,75 @@ export const text = {
       },
     ],
   },
+  footer: {
+    navigation: {
+      general: {
+        heading: 'Allgemeines',
+        list: [
+          {
+            linkText: 'Preise',
+            href: '/preise',
+          },
+          {
+            linkText: 'Sitemap',
+            href: '/sitemap',
+          },
+          {
+            linkText: 'Google Analytics deaktivieren',
+            href: '#',
+          },
+        ],
+      },
+      languages: {
+        heading: 'Sprache wählen',
+        list: [
+          {
+            linkText: 'Deutsch',
+            href: '/',
+          },
+          {
+            linkText: 'English',
+            href: '/en',
+          },
+        ],
+      },
+      products: {
+        heading: 'Produkte',
+        list: [
+          {
+            linkText: 'Gutscheine',
+            href: '/gutscheine',
+          },
+          {
+            linkText: 'Wandkalender',
+            href: '/kalender',
+          },
+        ],
+      },
+      developers: {
+        heading: 'Webentwicklung',
+        list: [
+          {
+            linkText: 'Foto API',
+            href: '/api',
+          },
+        ],
+      },
+      links: {
+        heading: 'Links',
+        list: [
+          {
+            linkText: 'Instagram: @peter.stuhlmann.fotografie',
+            href: 'https://instagram.com/peter.stuhlmann.fotografie',
+          },
+          {
+            linkText: 'Peter R. Stuhlmann Webentwicklung',
+            href: 'https://peter-stuhlmann-webentwicklung.de',
+          },
+        ],
+      },
+    },
+  },
   subFooter: {
     copyright: 'Peter R. Stuhlmann Fotografie',
     navigation: [
@@ -78,6 +147,9 @@ export const text = {
       'Ort (im Studio, bei Dir oder einer anderen Location, outdoor)',
       'Anzahl der Personen',
     ],
+  },
+  prices: {
+    heading: 'Preise',
   },
   legalNotice: {
     heading: 'Impressum',

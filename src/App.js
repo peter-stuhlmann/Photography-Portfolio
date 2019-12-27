@@ -13,6 +13,7 @@ import LegalNotice from './components/LegalNotice';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import { landscapes, nudes, portraits } from './data/Photos';
 import Prices from './components/Prices';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -63,6 +64,7 @@ export default function App() {
             <Route component={NotFound} />
           </Switch>
         </Wrapper>
+        <Footer />
         <SubFooter />
       </BrowserRouter>
     </ContextProvider>
