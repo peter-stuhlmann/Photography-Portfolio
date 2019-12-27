@@ -207,4 +207,57 @@ export const text = {
       ],
     },
   },
+  sitemap: {
+    heading: 'Sitemap',
+    links: [
+      {
+        linkText: 'Portraits',
+        href: '/',
+      },
+      {
+        linkText: 'Akt & Erotik',
+        href: '/akt',
+      },
+      {
+        linkText: 'Landschafts- und Architekturfotografie',
+        href: '/landschaftsfotografie',
+      },
+      {
+        linkText: 'Über mich',
+        href: '/ueber-mich',
+      },
+      {
+        linkText: 'Blog',
+        href: '/blog',
+      },
+      {
+        linkText: 'Preise',
+        href: '/preise',
+      },
+      {
+        linkText: 'Gutscheine',
+        href: '/gutscheine',
+      },
+      {
+        linkText: 'Wandkalender',
+        href: '/kalender',
+      },
+      {
+        linkText: 'Kontakt',
+        href: '/kontakt',
+      },
+      {
+        linkText: 'Foto API',
+        href: '/api',
+      },
+      {
+        linkText: 'Impressum',
+        href: '/impressum',
+      },
+      {
+        linkText: 'Datenschutzerklärung',
+        href: '/datenschutzerklaerung',
+      },
+    ],
+  },
 };
