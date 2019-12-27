@@ -2,15 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledUnorderedList = styled.ul`
-  padding: 15px;
+  padding: ${props => props.paddingX || '15px'};
 
-  a {
-    color: #282828;
-    text-decoration: none;
+  li {
+    list-style-type: ${props => props.listStyleType || 'disc'};
+
+    a {
+      color: #282828;
+      text-decoration: none;
+    }
   }
 `;
 
 export const UL = props => {
-  const { children } = props;
-  return <StyledUnorderedList>{children}</StyledUnorderedList>;
+  const { children, listStyleType, paddingX } = props;
+  return (
+    <StyledUnorderedList listStyleType={listStyleType} paddingX={paddingX}>
+      {children}
+    </StyledUnorderedList>
+  );
 };
