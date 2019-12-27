@@ -8,24 +8,11 @@ function Navbar({ open }) {
 
   return (
     <StyledNavbar open={open}>
-      <Link to={text.header.navigation[0].href}>
-        {text.header.navigation[0].linkText}
-      </Link>
-      <Link to={text.header.navigation[1].href}>
-        {text.header.navigation[1].linkText}
-      </Link>
-      <Link to={text.header.navigation[2].href}>
-        {text.header.navigation[2].linkText}
-      </Link>
-      <Link to={text.header.navigation[3].href}>
-        {text.header.navigation[3].linkText}
-      </Link>
-      <Link to={text.header.navigation[4].href}>
-        {text.header.navigation[4].linkText}
-      </Link>
-      <Link to={text.header.navigation[5].href}>
-        {text.header.navigation[5].linkText}
-      </Link>
+      {text.header.navigation.map(links => (
+        <Link key={links.href} to={links.href}>
+          {links.linkText}
+        </Link>
+      ))}
     </StyledNavbar>
   );
 }

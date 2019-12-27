@@ -11,48 +11,43 @@ export default function Footer() {
       <div>
         <nav>
           <h3>{text.footer.navigation.general.heading}</h3>
-          <Link to={text.footer.navigation.general.list[0].href}>
-            {text.footer.navigation.general.list[0].linkText}
-          </Link>
-          <Link to={text.footer.navigation.general.list[1].href}>
-            {text.footer.navigation.general.list[1].linkText}
-          </Link>
-          <Link to={text.footer.navigation.general.list[2].href}>
-            {text.footer.navigation.general.list[2].linkText}
-          </Link>
+          {text.footer.navigation.general.list.map(links => (
+            <Link key={links.href} to={links.href}>
+              {links.linkText}
+            </Link>
+          ))}
         </nav>
         <nav>
           <h3>{text.footer.navigation.languages.heading}</h3>
-          <Link to={text.footer.navigation.languages.list[0].href}>
-            {text.footer.navigation.languages.list[0].linkText}
-          </Link>
-          <Link to={text.footer.navigation.languages.list[1].href}>
-            {text.footer.navigation.languages.list[1].linkText}
-          </Link>
+          {text.footer.navigation.languages.list.map(links => (
+            <Link key={links.href} to={links.href}>
+              {links.linkText}
+            </Link>
+          ))}
         </nav>
         <nav>
           <h3>{text.footer.navigation.products.heading}</h3>
-          <Link to={text.footer.navigation.products.list[0].href}>
-            {text.footer.navigation.products.list[0].linkText}
-          </Link>
-          <Link to={text.footer.navigation.products.list[1].href}>
-            {text.footer.navigation.products.list[1].linkText}
-          </Link>
+          {text.footer.navigation.products.list.map(links => (
+            <Link key={links.href} to={links.href}>
+              {links.linkText}
+            </Link>
+          ))}
         </nav>
         <nav>
           <h3>{text.footer.navigation.developers.heading}</h3>
-          <Link to={text.footer.navigation.developers.list[0].href}>
-            {text.footer.navigation.developers.list[0].linkText}
-          </Link>
+          {text.footer.navigation.developers.list.map(links => (
+            <Link key={links.href} to={links.href}>
+              {links.linkText}
+            </Link>
+          ))}
         </nav>
         <nav>
           <h3>{text.footer.navigation.links.heading}</h3>
-          <a href={text.footer.navigation.links.list[0].href}>
-            {text.footer.navigation.links.list[0].linkText}
-          </a>
-          <a href={text.footer.navigation.links.list[1].href}>
-            {text.footer.navigation.links.list[1].linkText}
-          </a>
+          {text.footer.navigation.links.list.map(links => (
+            <a key={links.href} href={links.href}>
+              {links.linkText}
+            </a>
+          ))}
         </nav>
         <nav />
       </div>
