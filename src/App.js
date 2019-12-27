@@ -14,6 +14,7 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 import { landscapes, nudes, portraits } from './data/Photos';
 import Prices from './components/Prices';
 import Footer from './components/Footer';
+import Sitemap from './components/Sitemap';
 
 export default function App() {
   return (
@@ -55,6 +56,7 @@ export default function App() {
             <Route exact path="/kontakt" component={Contact} />
             <Route exact path="/preise" component={Prices} />
             <Route exact path="/ueber-mich" component={About} />
+            <Route exact path="/sitemap" component={Sitemap} />
             <Route exact path="/impressum" component={LegalNotice} />
             <Route
               exact
