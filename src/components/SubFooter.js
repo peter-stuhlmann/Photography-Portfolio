@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { Context } from '../Context';
 import styled from 'styled-components';
 
-export default function Footer() {
+export default function SubFooter() {
   const { text } = useContext(Context);
 
   return (
-    <StyledFooter>
+    <StyledSubFooter>
       <div>
         <p>
           <Link to="/">&copy; {text.subFooter.copyright}</Link>, 2019
@@ -21,11 +21,11 @@ export default function Footer() {
           </Link>
         </nav>
       </div>
-    </StyledFooter>
+    </StyledSubFooter>
   );
 }
 
-const StyledFooter = styled.footer`
+const StyledSubFooter = styled.footer`
   background-color: #282828;
   font-size: 14px;
   text-transform: uppercase;
