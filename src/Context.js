@@ -1,4 +1,5 @@
 import React from 'react';
+import { posts } from './data/BlogPosts';
 import { text } from './data/Text';
 
 export const Context = React.createContext(null);
@@ -8,6 +9,7 @@ export default function ContextProvider({ children }) {
     <Context.Provider
       value={{
         text,
+        posts,
       }}
     >
       {children}

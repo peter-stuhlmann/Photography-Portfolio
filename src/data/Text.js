@@ -130,6 +130,10 @@ export const text = {
     text:
       'Mein Name ist Peter R. Stuhlmann und ich bin Online-Unternehmer und Fotograf mit Schwerpunkt in den Bereichen People-, Landschafts- und Architekturfotografie. Ich bin 23 Jahre alt und wohne in Berlin. Fotoshootings biete ich deutschlandweit, vorzugsweise aber im Raum Berlin an.<br />Neben dem Portfolio auf dieser Website findest Du meine fotografischen Arbeiten im Internet auch bei <a href="https://instagram.com/peter.stuhlmann.fotografie">Instagram</a>. Ich freue mich dort auf Deinen Besuch.',
   },
+  blog: {
+    heading: 'Blog',
+    readMore: 'Artikel lesen',
+  },
   contact: {
     heading: 'Kontakt',
     data: [
