@@ -16,6 +16,7 @@ import Prices from './components/Prices';
 import Footer from './components/Footer';
 import Sitemap from './components/Sitemap';
 import Blog from './components/Blog';
+import BlogPost from './components/BlogPost';
 
 export default function App() {
   return (
@@ -55,6 +56,7 @@ export default function App() {
               }
             />
             <Route exact path="/blog" component={Blog} />
+            <Route exact path="/blog/:slug" component={BlogPost} />
             <Route exact path="/kontakt" component={Contact} />
             <Route exact path="/preise" component={Prices} />
             <Route exact path="/ueber-mich" component={About} />
