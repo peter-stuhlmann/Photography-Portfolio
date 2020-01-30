@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Fragment, useState, useCallback } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Gallery from 'react-photo-gallery';
+import Carousel, { Modal, ModalGateway } from 'react-images';
 import ContextProvider from './Context';
 import { GlobalStyles } from './components/styled-components/GlobalStyles';
 import { Wrapper } from './components/styled-components/Wrapper';
@@ -19,6 +20,19 @@ import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
 
 export default function App() {
+  const [currentImage, setCurrentImage] = useState(0);
+  const [viewerIsOpen, setViewerIsOpen] = useState(false);
+
+  const openLightbox = useCallback((event, { index }) => {
+    setCurrentImage(index);
+    setViewerIsOpen(true);
+  }, []);
+
+  const closeLightbox = () => {
+    setCurrentImage(0);
+    setViewerIsOpen(false);
+  };
+
   return (
     <ContextProvider>
       <BrowserRouter>
@@ -31,7 +45,23 @@ export default function App() {
               path="/"
               render={() =>
                 portraits ? (
-                  <Gallery photos={portraits} />
+                  <Fragment>
+                    <Gallery photos={portraits} onClick={openLightbox} />
+                    <ModalGateway>
+                      {viewerIsOpen ? (
+                        <Modal onClose={closeLightbox}>
+                          <Carousel
+                            currentIndex={currentImage}
+                            views={portraits.map(x => ({
+                              ...x,
+                              srcset: x.srcSet,
+                              caption: x.title,
+                            }))}
+                          />
+                        </Modal>
+                      ) : null}
+                    </ModalGateway>
+                  </Fragment>
                 ) : (
                   'Bilder werden geladen ...'
                 )
@@ -41,7 +71,27 @@ export default function App() {
               exact
               path="/akt"
               render={() =>
-                nudes ? <Gallery photos={nudes} /> : 'Bilder werden geladen ...'
+                nudes ? (
+                  <Fragment>
+                    <Gallery photos={nudes} onClick={openLightbox} />
+                    <ModalGateway>
+                      {viewerIsOpen ? (
+                        <Modal onClose={closeLightbox}>
+                          <Carousel
+                            currentIndex={currentImage}
+                            views={nudes.map(x => ({
+                              ...x,
+                              srcset: x.srcSet,
+                              caption: x.title,
+                            }))}
+                          />
+                        </Modal>
+                      ) : null}
+                    </ModalGateway>
+                  </Fragment>
+                ) : (
+                  'Bilder werden geladen ...'
+                )
               }
             />
             <Route
@@ -49,7 +99,23 @@ export default function App() {
               path="/landschaftsfotografie"
               render={() =>
                 landscapes ? (
-                  <Gallery photos={landscapes} />
+                  <Fragment>
+                    <Gallery photos={landscapes} onClick={openLightbox} />
+                    <ModalGateway>
+                      {viewerIsOpen ? (
+                        <Modal onClose={closeLightbox}>
+                          <Carousel
+                            currentIndex={currentImage}
+                            views={landscapes.map(x => ({
+                              ...x,
+                              srcset: x.srcSet,
+                              caption: x.title,
+                            }))}
+                          />
+                        </Modal>
+                      ) : null}
+                    </ModalGateway>
+                  </Fragment>
                 ) : (
                   'Bilder werden geladen ...'
                 )
