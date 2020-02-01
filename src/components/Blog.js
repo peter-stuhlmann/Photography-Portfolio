@@ -18,14 +18,14 @@ export default function Blog() {
             />
             <div className="card-content">
               <h2>
-                <Link to={post.slug}>{post.title}</Link>
+                <Link to={`blog/${post.slug}`}>{post.title}</Link>
               </h2>
               <div className="meta">
                 {post.date} | {post.category}
               </div>
               <p>{post.excerpt}</p>
               <button type="button">
-                <Link to={post.slug}>{text.blog.readMore}</Link>
+                <Link to={`blog/${post.slug}`}>{text.blog.readMore}</Link>
               </button>
             </div>
           </li>
