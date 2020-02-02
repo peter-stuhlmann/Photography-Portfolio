@@ -16,9 +16,9 @@ const StyledImage = styled.div`
 `;
 
 export const Image = props => {
-  const { alt, caption, src, title } = props;
+  const { alt, caption, src, title, style } = props;
   return (
-    <StyledImage>
+    <StyledImage style={style}>
       <img alt={alt} src={src} title={title} />
       <div className="caption">{caption}</div>
     </StyledImage>
