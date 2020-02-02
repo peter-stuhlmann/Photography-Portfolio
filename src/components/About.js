@@ -1,4 +1,5 @@
 import React, { Fragment, useContext } from 'react';
+import styled from 'styled-components';
 import { Context } from '../Context';
 import { TwoColumns } from './styled-components/Columns';
 import { Image } from './styled-components/Image';
@@ -32,9 +33,22 @@ export default function About() {
             src={require(`../assets/img/${text.about.img[0].src}`)}
             alt={text.about.img[0].alt}
             title={text.about.img[0].title}
+            style={{ marginTop: '25px', marginBottom: '45px' }}
           />
         </div>
       </TwoColumns>
+
+      <h1>{text.testimonials.heading}</h1>
+      {text.testimonials.cards.map(cards => (
+        <Testimonials key={cards.img}>
+          <img src={cards.img} alt={cards.name} />
+          <p>
+            {cards.quote} <span>{cards.name}</span>
+          </p>
+        </Testimonials>
+      ))}
     </Fragment>
   );
 }
+
+const Testimonials = styled.div``;
