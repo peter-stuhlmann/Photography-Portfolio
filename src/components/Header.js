@@ -22,10 +22,10 @@ const StyledHeader = styled.header`
   text-transform: uppercase;
 
   @media (min-width: 768px) {
-    padding: 20px;
+    padding: 50px 20px 20px 20px;
   }
 
-  @media (min-width: 1300px) {
+  @media (min-width: 1650px) {
     background-color: #fff;
     display: flex;
     flex-flow: row wrap;
@@ -44,10 +44,15 @@ const StyledHeader = styled.header`
       letter-spacing: 4px;
       margin-bottom: -30px;
       text-decoration: none;
+
+      @media (max-width: 1649px) {
+        font-size: 38px;
+      }
     }
 
     p {
       color: #000;
+      letter-spacing: 1.5px;
       margin: 0;
     }
 
@@ -55,7 +60,7 @@ const StyledHeader = styled.header`
       display: block;
     }
 
-    @media (max-width: 1300px) {
+    @media (max-width: 1649px) {
       text-align: center;
     }
   }

@@ -49,7 +49,6 @@ export default function Footer() {
             </a>
           ))}
         </nav>
-        <nav />
       </div>
     </StyledFooter>
   );
@@ -58,6 +57,14 @@ export default function Footer() {
 const StyledFooter = styled.footer`
   background-color: #1c1c1c;
   font-size: 14px;
+
+  @media screen and (max-width: 1150px) {
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    font-size: 14px;
+  }
 
   div {
     box-sizing: border-box;
@@ -68,7 +75,11 @@ const StyledFooter = styled.footer`
     padding: 40px 50px;
     width: 100%;
 
-    @media screen and (min-width: 1300px) {
+    @media screen and (min-width: 768px) {
+      justify-content: flex-start;
+    }
+
+    @media screen and (min-width: 1000px) {
       justify-content: space-between;
     }
 
@@ -76,6 +87,11 @@ const StyledFooter = styled.footer`
       display: flex;
       flex: 0 0 20%;
       flex-direction: column;
+
+      @media screen and (max-width: 1000px) {
+        flex: 0 0 33.33333%;
+        margin-top: 30px;
+      }
 
       @media screen and (max-width: 768px) {
         flex: 0 0 100%;

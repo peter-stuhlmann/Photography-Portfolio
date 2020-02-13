@@ -38,7 +38,7 @@ const StyledNavbar = styled.nav`
   transition: transform 0.3s ease-in-out;
   width: 300px;
 
-  @media (min-width: 1300px) {
+  @media (min-width: 1650px) {
     text-align: right;
   }
 

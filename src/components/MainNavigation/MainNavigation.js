@@ -44,12 +44,17 @@ const StyledMainNavigation = styled.div`
   display: flex;
   padding: 15px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1650px) {
     padding: 0;
   }
 
-  @media (min-width: 768px) and (max-width: 1300px) {
+  @media (min-width: 768px) and (max-width: 1649px) {
     margin-top: 25px;
+  }
+
+  a {
+    font-weight: bold;
+    letter-spacing: 1.5px;
   }
 
   .site-title-mobile {
@@ -63,6 +68,7 @@ const StyledMainNavigation = styled.div`
 
     a {
       color: #000;
+      letter-spacing: 1.5px;
       text-decoration: none;
     }
   }
