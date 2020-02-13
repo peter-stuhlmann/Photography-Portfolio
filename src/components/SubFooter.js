@@ -6,11 +6,14 @@ import styled from 'styled-components';
 export default function SubFooter() {
   const { text } = useContext(Context);
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <StyledSubFooter>
       <div>
         <p>
-          <Link to="/">&copy; {text.subFooter.copyright}</Link>, 2019
+          <Link to="/">&copy; {text.subFooter.copyright}</Link>, 2016-
+          {currentYear}
         </p>
         <nav>
           {text.subFooter.navigation.map(links => (
