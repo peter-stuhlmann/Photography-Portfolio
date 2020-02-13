@@ -14,6 +14,7 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 1.6;
     margin: 0;
 
+    // portfolio galleries
     .react-photo-gallery--gallery img {
       filter: grayscale(100%);
       transition: 0.5s;
@@ -21,6 +22,12 @@ export const GlobalStyles = createGlobalStyle`
       &:hover {
         filter: grayscale(0%);
       }
+    }
+
+    blockquote {
+      margin: 0 auto;
+      padding: 0 15px;
+      border-left: 2px solid #28282870;
     }
   }
 `;

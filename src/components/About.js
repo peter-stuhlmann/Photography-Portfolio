@@ -26,6 +26,7 @@ export default function About() {
             dangerouslySetInnerHTML={{
               __html: text.about.text,
             }}
+            style={{ marginBottom: '25px' }}
           />
         </div>
         <div className="column-right">
@@ -33,7 +34,7 @@ export default function About() {
             src={require(`../assets/img/${text.about.img[0].src}`)}
             alt={text.about.img[0].alt}
             title={text.about.img[0].title}
-            style={{ marginTop: '25px', marginBottom: '45px' }}
+            style={{ marginBottom: '45px' }}
           />
         </div>
       </TwoColumns>
