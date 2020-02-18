@@ -18,6 +18,7 @@ import BlogPost from './components/BlogPost';
 import Portraits from './components/Portraits';
 import Nudes from './components/Nudes';
 import Landscapes from './components/Landscapes';
+import PhotoAPI from './components/PhotoAPI';
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
             <Route exact path="/preise" component={Prices} />
             <Route exact path="/ueber-mich" component={About} />
             <Route exact path="/sitemap" component={Sitemap} />
+            <Route exact path="/api" component={PhotoAPI} />
             <Route exact path="/impressum" component={LegalNotice} />
             <Route
               exact
