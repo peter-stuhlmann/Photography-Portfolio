@@ -15,13 +15,13 @@ export default function SubFooter() {
           <Link to="/">&copy; {text.subFooter.copyright}</Link>, 2016-
           {currentYear}
         </p>
-        <nav>
-          {text.subFooter.navigation.map(links => (
-            <Link key={links.href} to={links.href}>
-              {links.linkText}
-            </Link>
-          ))}
-        </nav>
+        <p>
+          {text.subFooter.developer.title}
+          <a href={text.subFooter.developer.href}>
+            {text.subFooter.developer.name}
+          </a>
+          .
+        </p>
       </div>
     </StyledSubFooter>
   );
@@ -30,7 +30,7 @@ export default function SubFooter() {
 const StyledSubFooter = styled.footer`
   background-color: #282828;
   font-size: 14px;
-  text-transform: uppercase;
+  // text-transform: uppercase;
 
   div {
     box-sizing: border-box;
@@ -66,6 +66,7 @@ const StyledSubFooter = styled.footer`
       }
     }
 
+    // nav is currently not used
     nav {
       display: flex;
       flex-flow: row wrap;

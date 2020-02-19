@@ -18,6 +18,14 @@ export default function Footer() {
           ))}
         </nav>
         <nav>
+          <h3>{text.footer.navigation.legal.heading}</h3>
+          {text.footer.navigation.legal.list.map(links => (
+            <Link key={links.href} to={links.href}>
+              {links.linkText}
+            </Link>
+          ))}
+        </nav>
+        <nav>
           <h3>{text.footer.navigation.languages.heading}</h3>
           {text.footer.navigation.languages.list.map(links => (
             <Link key={links.href} to={links.href}>
@@ -28,14 +36,6 @@ export default function Footer() {
         <nav>
           <h3>{text.footer.navigation.products.heading}</h3>
           {text.footer.navigation.products.list.map(links => (
-            <Link key={links.href} to={links.href}>
-              {links.linkText}
-            </Link>
-          ))}
-        </nav>
-        <nav>
-          <h3>{text.footer.navigation.developers.heading}</h3>
-          {text.footer.navigation.developers.list.map(links => (
             <Link key={links.href} to={links.href}>
               {links.linkText}
             </Link>
