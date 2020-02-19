@@ -1,19 +1,49 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#282828" />
-    <link rel="icon" type="image/x-icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Peter R. Stuhlmann Fotografie</title>
-  </head>
-  <body>
-    <noscript>
-      Um den Inhalt dieser Website sehen zu können, erlaube bitte in den
-      Browser-Einstellungen das Ausführen von Javascript.
-    </noscript>
-    <div id="root"></div>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#282828" />
+  <link rel="icon" type="image/x-icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>Peter R. Stuhlmann Fotografie</title>
+</head>
+
+<body>
+  <noscript>
+    Um den Inhalt dieser Website sehen zu können, erlaube bitte in den
+    Browser-Einstellungen das Ausführen von Javascript.
+  </noscript>
+  <div id="root"></div>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXXXXX-X', { anonymize_ip: true });
+  </script>
+
+  <script>
+    const gaProperty = 'UA-XXXXXXXX-X';
+
+    // Disable tracking if the opt-out cookie exists.
+    const disableStr = `ga-disable-${gaProperty}`;
+    if (document.cookie.indexOf(`${disableStr}=true`) > -1) {
+      window[disableStr] = true;
+    }
+
+    // Opt-out function
+    const gaOptout = () => {
+      document.cookie = `${disableStr}=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
+      window[disableStr] = true;
+      alert("Tracking durch Google Analytics wurde deaktiviert.")
+    };
+  </script>
+</body>
+
 </html>
