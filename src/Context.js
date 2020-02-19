@@ -1,6 +1,7 @@
 import React from 'react';
 import { posts } from './data/BlogPosts';
 import { text } from './data/Text';
+import { legal } from './data/LegalTexts';
 import { landscapes, nudes, portraits } from './data/Photos';
 
 export const Context = React.createContext(null);
@@ -14,6 +15,7 @@ export default function ContextProvider({ children }) {
         landscapes,
         nudes,
         portraits,
+        legal,
       }}
     >
       {children}
