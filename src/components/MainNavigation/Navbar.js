@@ -37,6 +37,7 @@ const StyledNavbar = styled.nav`
     open ? 'translateX(0)' : 'translateX(calc(-100% - 7px))'};
   transition: transform 0.3s ease-in-out;
   width: 300px;
+  z-index: 1;
 
   @media (min-width: 1650px) {
     text-align: right;

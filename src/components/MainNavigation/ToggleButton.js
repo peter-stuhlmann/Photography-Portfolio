@@ -21,7 +21,7 @@ const StyledToggleButton = styled.button`
   justify-content: space-around;
   padding: 0;
   width: 26px;
-  z-index: 1;
+  z-index: 2;
 
   &:focus {
     outline: none;
