@@ -1,5 +1,6 @@
 import React, { Fragment, useContext } from 'react';
 import styled from 'styled-components';
+import LazyLoad from 'react-lazy-load';
 import { Context } from '../Context';
 
 export default function Testimonials() {
@@ -11,7 +12,9 @@ export default function Testimonials() {
       {text.testimonials.cards.map(cards => (
         <TestimonialCard key={cards.img}>
           <div>
-            <img src={cards.img} alt={cards.name} />
+            <LazyLoad height={150} offsetVertical={100}>
+              <img src={cards.img} alt={cards.name} />
+            </LazyLoad>
           </div>
           <p>
             <span>{cards.name}</span> {cards.quote} <span>{cards.name}</span>

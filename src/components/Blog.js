@@ -1,4 +1,5 @@
 import React, { Fragment, useContext } from 'react';
+import LazyLoad from 'react-lazy-load';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Context } from '../Context';
@@ -6,16 +7,38 @@ import { Context } from '../Context';
 export default function Blog() {
   const { posts, text } = useContext(Context);
 
+  // calculate the height of a blog post card (1/3 of the width)
+  let cardHeight;
+  const width = window.innerWidth;
+  switch (true) {
+    case width < 768:
+      cardHeight = width / 3; // 1 card per row
+      break;
+    case width < 1300:
+      cardHeight = width / 6; // 2 card per row
+      break;
+    case width >= 1300:
+      cardHeight = width / 9; // 3 card per row
+      break;
+    default:
+      cardHeight = 200;
+  }
+
   return (
     <Fragment>
       <h1>{text.blog.heading}</h1>
       <StyledBlog>
         {posts.map(post => (
           <li key={post.date}>
-            <div
-              className="card-image"
-              style={{ backgroundImage: `url(${post.thumbnail})` }}
-            />
+            <LazyLoad height={cardHeight} offsetVertical={250}>
+              <div
+                className="card-image"
+                style={{
+                  backgroundImage: `url(${post.thumbnail})`,
+                  height: cardHeight,
+                }}
+              />
+            </LazyLoad>
             <div className="card-content">
               <h2>
                 <Link to={`blog/${post.slug}`}>{post.title}</Link>
@@ -61,15 +84,6 @@ const StyledBlog = styled.ul`
       background-position: center;
       background-size: cover;
       border-radius: 8px 8px 0 0;
-      height: 200px;
-
-      @media screen and (min-width: 768px) {
-        height: 200px;
-      }
-
-      @media screen and (min-width: 1300px) {
-        height: 150px;
-      }
 
       img {
         height: 100%;
