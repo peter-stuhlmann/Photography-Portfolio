@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useCallback } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import ContextProvider from './Context';
 import { GlobalStyles } from './components/styled-components/GlobalStyles';
 import { Wrapper } from './components/styled-components/Wrapper';
@@ -30,6 +30,7 @@ export default function App() {
         <Wrapper>
           <Switch>
             <Route exact path="/" component={Portraits} />
+            <Route exact path="/portraits" render={() => <Redirect to="/" />} />
             <Route exact path="/akt" component={Nudes} />
             <Route exact path="/landschaftsfotografie" component={Landscapes} />
             <Route exact path="/blog" component={Blog} />
