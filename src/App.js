@@ -1,6 +1,6 @@
-import React, { Fragment, useState, useCallback } from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import ContextProvider from './Context';
+import ContextProvider, { Context } from './Context';
 import { GlobalStyles } from './components/styled-components/GlobalStyles';
 import { Wrapper } from './components/styled-components/Wrapper';
 import About from './components/About';
@@ -20,6 +20,7 @@ import Nudes from './components/Nudes';
 import Landscapes from './components/Landscapes';
 import PhotoAPI from './components/PhotoAPI';
 import GeneralTerms from './components/GeneralTerms';
+import { ga } from './helpers/analytics';
 
 export default function App() {
   return (
@@ -29,25 +30,29 @@ export default function App() {
         <Header />
         <Wrapper>
           <Switch>
-            <Route exact path="/" component={Portraits} />
+            <Route exact path="/" component={ga(Portraits)} />
             <Route exact path="/portraits" render={() => <Redirect to="/" />} />
-            <Route exact path="/akt" component={Nudes} />
-            <Route exact path="/landschaftsfotografie" component={Landscapes} />
-            <Route exact path="/blog" component={Blog} />
-            <Route exact path="/blog/:slug" component={BlogPost} />
-            <Route exact path="/kontakt" component={Contact} />
-            <Route exact path="/preise" component={Prices} />
-            <Route exact path="/ueber-mich" component={About} />
-            <Route exact path="/sitemap" component={Sitemap} />
-            <Route exact path="/api" component={PhotoAPI} />
-            <Route exact path="/agb" component={GeneralTerms} />
-            <Route exact path="/impressum" component={LegalNotice} />
+            <Route exact path="/akt" component={ga(Nudes)} />
+            <Route
+              exact
+              path="/landschaftsfotografie"
+              component={ga(Landscapes)}
+            />
+            <Route exact path="/blog" component={ga(Blog)} />
+            <Route exact path="/blog/:slug" component={ga(BlogPost)} />
+            <Route exact path="/kontakt" component={ga(Contact)} />
+            <Route exact path="/preise" component={ga(Prices)} />
+            <Route exact path="/ueber-mich" component={ga(About)} />
+            <Route exact path="/sitemap" component={ga(Sitemap)} />
+            <Route exact path="/api" component={ga(PhotoAPI)} />
+            <Route exact path="/agb" component={ga(GeneralTerms)} />
+            <Route exact path="/impressum" component={ga(LegalNotice)} />
             <Route
               exact
               path="/datenschutzerklaerung"
-              component={PrivacyPolicy}
+              component={ga(PrivacyPolicy)}
             />
-            <Route component={NotFound} />
+            <Route component={ga(NotFound)} />
           </Switch>
         </Wrapper>
         <Footer />

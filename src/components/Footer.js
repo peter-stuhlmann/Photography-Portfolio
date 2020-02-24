@@ -4,7 +4,12 @@ import { Context } from '../Context';
 import styled from 'styled-components';
 
 export default function Footer() {
-  const { text } = useContext(Context);
+  const { text, toggleTracking, tracking } = useContext(Context);
+
+  let button;
+  tracking === false
+    ? (button = 'Google Analytics aktivieren')
+    : (button = 'Google Analytics deaktivieren');
 
   return (
     <StyledFooter>
@@ -24,6 +29,7 @@ export default function Footer() {
               {links.linkText}
             </Link>
           ))}
+          <span onClick={toggleTracking}>{button}</span>
         </nav>
         <nav>
           <h3>{text.footer.navigation.languages.heading}</h3>
@@ -105,8 +111,10 @@ const StyledFooter = styled.footer`
         text-transform: uppercase;
       }
 
-      a {
+      a,
+      span {
         color: #fff;
+        cursor: pointer;
         padding: 7px 0;
         text-decoration: none;
 
