@@ -22,6 +22,7 @@ import PhotoAPI from './components/PhotoAPI';
 import GeneralTerms from './components/GeneralTerms';
 import { ga } from './helpers/analytics';
 import { ThemeProvider } from 'styled-components';
+import CookieConsentBanner from './components/CookieConsentBanner';
 
 export default function App() {
   const { themeMode } = useContext(Context);
@@ -30,6 +31,7 @@ export default function App() {
     <ThemeProvider theme={{ mode: themeMode }}>
       <BrowserRouter>
         <GlobalStyles />
+        <CookieConsentBanner />
         <Header />
         <Wrapper>
           <Switch>
