@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import RalewayRegular from '../../assets/fonts/raleway/Raleway-Regular.ttf';
-import { textColor, backgroundColor } from './Variables';
+import { textColor, backgroundColor } from './Themes';
 
 export const GlobalStyles = createGlobalStyle`
   @font-face {

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../../Context';
 import styled from 'styled-components';
-import { backgroundColor, textColor } from '../styled-components/Variables';
+import { backgroundColor, textColor } from '../styled-components/Themes';
 
 function Navbar({ open }) {
   const { text } = useContext(Context);

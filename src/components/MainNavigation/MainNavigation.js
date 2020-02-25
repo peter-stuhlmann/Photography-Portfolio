@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Context } from '../../Context';
 import ToggleButton from './ToggleButton';
 import Navbar from './Navbar';
-import { textColor, backgroundColor } from '../styled-components/Variables';
+import { textColor, backgroundColor } from '../styled-components/Themes';
 
 const useOnClickOutside = (ref, handler) => {
   useEffect(() => {
