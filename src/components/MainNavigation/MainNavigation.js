@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Context } from '../../Context';
 import ToggleButton from './ToggleButton';
 import Navbar from './Navbar';
+import { textColor, backgroundColor } from '../styled-components/Variables';
 
 const useOnClickOutside = (ref, handler) => {
   useEffect(() => {
@@ -40,7 +41,7 @@ export default function MainNavigation() {
 }
 
 const StyledMainNavigation = styled.div`
-  background-color: #fff;
+  background-color: ${backgroundColor};
   display: flex;
   padding: 15px;
 
@@ -67,7 +68,7 @@ const StyledMainNavigation = styled.div`
     }
 
     a {
-      color: #000;
+      color: ${textColor};
       letter-spacing: 1.5px;
       text-decoration: none;
     }

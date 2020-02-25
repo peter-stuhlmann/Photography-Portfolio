@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { textColor } from '../styled-components/Themes';
 
 const ToggleButton = ({ open, setOpen }) => (
   <StyledToggleButton open={open} onClick={() => setOpen(!open)}>
@@ -28,7 +29,7 @@ const StyledToggleButton = styled.button`
   }
 
   div {
-    background-color: #000;
+    background-color: ${textColor};
     border-radius: 10px;
     height: 3px;
     position: relative;

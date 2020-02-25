@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { posts } from './data/BlogPosts';
 import { text } from './data/Text';
 import { legal } from './data/LegalTexts';
@@ -23,6 +23,12 @@ export default function ContextProvider({ children }) {
     window[`ga-disable-${trackingCode}`] = false;
   }
 
+  const [themeMode, setThemeMode] = useLocalStorage('Theme', 'light');
+
+  const toggleTheming = () => {
+    themeMode === 'light' ? setThemeMode('dark') : setThemeMode('light');
+  };
+
   return (
     <Context.Provider
       value={{
@@ -34,6 +40,8 @@ export default function ContextProvider({ children }) {
         legal,
         tracking,
         toggleTracking,
+        toggleTheming,
+        themeMode,
       }}
     >
       {children}

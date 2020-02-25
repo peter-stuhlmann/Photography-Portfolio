@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import ContextProvider, { Context } from './Context';
+import { Context } from './Context';
 import { GlobalStyles } from './components/styled-components/GlobalStyles';
 import { Wrapper } from './components/styled-components/Wrapper';
 import About from './components/About';
@@ -21,10 +21,13 @@ import Landscapes from './components/Landscapes';
 import PhotoAPI from './components/PhotoAPI';
 import GeneralTerms from './components/GeneralTerms';
 import { ga } from './helpers/analytics';
+import { ThemeProvider } from 'styled-components';
 
 export default function App() {
+  const { themeMode } = useContext(Context);
+
   return (
-    <ContextProvider>
+    <ThemeProvider theme={{ mode: themeMode }}>
       <BrowserRouter>
         <GlobalStyles />
         <Header />
@@ -58,6 +61,6 @@ export default function App() {
         <Footer />
         <SubFooter />
       </BrowserRouter>
-    </ContextProvider>
+    </ThemeProvider>
   );
 }

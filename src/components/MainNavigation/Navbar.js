@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../../Context';
 import styled from 'styled-components';
+import { backgroundColor, textColor } from '../styled-components/Variables';
 
 function Navbar({ open }) {
   const { text } = useContext(Context);
@@ -20,7 +21,7 @@ function Navbar({ open }) {
 export default Navbar;
 
 const StyledNavbar = styled.nav`
-  background-color: #fff;
+  background-color: ${backgroundColor};
   box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.75);
   box-sizing: border-box;
   display: flex;
@@ -44,7 +45,7 @@ const StyledNavbar = styled.nav`
   }
 
   a {
-    color: #000;
+    color: ${textColor};
     font-size: 14px;
     padding: 7px 12px;
     text-decoration: none;

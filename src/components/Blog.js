@@ -3,6 +3,7 @@ import LazyLoad from 'react-lazy-load';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Context } from '../Context';
+import { cardBackground, textColor } from './styled-components/Themes';
 
 export default function Blog() {
   const { posts, text } = useContext(Context);
@@ -65,7 +66,7 @@ const StyledBlog = styled.ul`
   padding: 0;
 
   li {
-    background-color: #28282828;
+    background-color: ${cardBackground};
     border-radius: 8px;
     box-sizing: border-box;
     flex: 0 0 100%;
@@ -99,7 +100,7 @@ const StyledBlog = styled.ul`
         line-height: 1.2;
 
         a {
-          color: #282828;
+          color: ${textColor};
           text-decoration: none;
         }
       }

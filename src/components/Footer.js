@@ -4,18 +4,30 @@ import { Context } from '../Context';
 import styled from 'styled-components';
 
 export default function Footer() {
-  const { text, toggleTracking, tracking } = useContext(Context);
+  const {
+    text,
+    toggleTracking,
+    tracking,
+    toggleTheming,
+    themeMode,
+  } = useContext(Context);
 
   let button;
   tracking === false
     ? (button = 'Google Analytics aktivieren')
     : (button = 'Google Analytics deaktivieren');
 
+  let themeModeButton;
+  themeMode === 'light'
+    ? (themeModeButton = 'Dark Theme')
+    : (themeModeButton = 'Light Theme');
+
   return (
     <StyledFooter>
       <div>
         <nav>
           <h3>{text.footer.navigation.general.heading}</h3>
+          <span onClick={toggleTheming}>{themeModeButton}</span>
           {text.footer.navigation.general.list.map(links => (
             <Link key={links.href} to={links.href}>
               {links.linkText}

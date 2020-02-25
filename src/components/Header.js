@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Context } from '../Context';
 import styled from 'styled-components';
 import MainNavigation from './MainNavigation/MainNavigation';
+import { backgroundColor, textColor } from './styled-components/Themes';
 
 export default function Header() {
   const { text } = useContext(Context);
@@ -26,7 +27,7 @@ const StyledHeader = styled.header`
   }
 
   @media (min-width: 1650px) {
-    background-color: #fff;
+    background-color: ${backgroundColor};
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -38,7 +39,7 @@ const StyledHeader = styled.header`
     text-align: left;
 
     a {
-      color: #000;
+      color: ${textColor};
       font-size: 25px;
       font-weight: bold;
       letter-spacing: 4px;
@@ -51,7 +52,7 @@ const StyledHeader = styled.header`
     }
 
     p {
-      color: #000;
+      color: ${textColor};
       letter-spacing: 1.5px;
       margin: 0;
     }

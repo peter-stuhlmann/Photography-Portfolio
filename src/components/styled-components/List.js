@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { textColor } from './Themes';
 
 const StyledUnorderedList = styled.ul`
   padding: ${props => props.paddingX || '15px'};
@@ -8,7 +9,7 @@ const StyledUnorderedList = styled.ul`
     list-style-type: ${props => props.listStyleType || 'disc'};
 
     a {
-      color: #282828;
+      color: ${textColor};
       text-decoration: none;
     }
   }

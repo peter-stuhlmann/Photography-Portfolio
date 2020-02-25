@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import RalewayRegular from '../../assets/fonts/raleway/Raleway-Regular.ttf';
+import { textColor, backgroundColor } from './Variables';
 
 export const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -8,7 +9,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background-color: #fff;
+    background-color: ${backgroundColor};
+    color: ${textColor};
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
     line-height: 1.6;
@@ -27,7 +29,7 @@ export const GlobalStyles = createGlobalStyle`
     blockquote {
       margin: 0 auto;
       padding: 0 15px;
-      border-left: 2px solid #28282870;
+      border-left: 2px solid ${textColor};
     }
   }
 `;
