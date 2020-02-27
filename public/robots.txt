@@ -1,2 +1,2 @@
-# https://www.robotstxt.org/robotstxt.html
+Sitemap: https://peter-stuhlmann-fotografie.de/sitemap.xml
 User-agent: *
