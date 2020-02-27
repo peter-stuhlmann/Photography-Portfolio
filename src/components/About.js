@@ -31,7 +31,7 @@ export default function About() {
         </div>
         <div className="column-right">
           <Image
-            src={require(`../assets/img/${text.about.img[0].src}`)}
+            src={text.about.img[0].src}
             alt={text.about.img[0].alt}
             title={text.about.img[0].title}
             style={{ marginBottom: '45px' }}
