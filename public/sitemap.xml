@@ -1,59 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Last modified by Peter R. Stuhlmann at 28-02-2020 -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url> 
-        <loc>https://peter-stuhlmann-fotografie/</loc>
+        <loc>https://peter-stuhlmann-fotografie.de/</loc>
     </url>
     <url>
-        <loc>https://peter-stuhlmann-fotografie/portraits/</loc>
+        <loc>https://peter-stuhlmann-fotografie.de/portraits/</loc>
         <lastmod>2020-02-28</lastmod>
     </url>
     <url>
-        <loc>https://peter-stuhlmann-fotografie/akt/</loc>
+        <loc>https://peter-stuhlmann-fotografie.de/akt/</loc>
         <lastmod>2020-02-28</lastmod>
     </url>
     <url>
-        <loc>https://peter-stuhlmann-fotografie/landschaftsfotografie/</loc>
+        <loc>https://peter-stuhlmann-fotografie.de/landschaftsfotografie/</loc>
         <lastmod>2020-02-28</lastmod>
     </url>
     <url>
-        <loc>https://peter-stuhlmann-fotografie/ueber-mich/</loc>
+        <loc>https://peter-stuhlmann-fotografie.de/ueber-mich/</loc>
+        <lastmod>2020-02-28</lastmod>
+        <image:image>
+            <image:loc>https://peter-stuhlmann-fotografie.de/peter-stuhlmann-fotografie.jpg</image:loc>
+            <image:title>Peter Stuhlmann</image:title>
+            <image:geo_location>Tel Aviv, Israel</image:geo_location>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://peter-stuhlmann-fotografie.de/preise/</loc>
         <lastmod>2020-02-28</lastmod>
     </url>
     <url>
-        <loc>https://peter-stuhlmann-fotografie/preise/</loc>
+        <loc>https://peter-stuhlmann-fotografie.de/gutscheine/</loc>
         <lastmod>2020-02-28</lastmod>
     </url>
     <url>
-        <loc>https://peter-stuhlmann-fotografie/gutscheine/</loc>
+        <loc>https://peter-stuhlmann-fotografie.de/kalender/</loc>
         <lastmod>2020-02-28</lastmod>
     </url>
     <url>
-        <loc>https://peter-stuhlmann-fotografie/kalender/</loc>
+        <loc>https://peter-stuhlmann-fotografie.de/kontakt/</loc>
         <lastmod>2020-02-28</lastmod>
     </url>
     <url>
-        <loc>https://peter-stuhlmann-fotografie/kontakt/</loc>
+        <loc>https://peter-stuhlmann-fotografie.de/api/</loc>
         <lastmod>2020-02-28</lastmod>
     </url>
     <url>
-        <loc>https://peter-stuhlmann-fotografie/api/</loc>
+        <loc>https://peter-stuhlmann-fotografie.de/impressum/</loc>
         <lastmod>2020-02-28</lastmod>
     </url>
     <url>
-        <loc>https://peter-stuhlmann-fotografie/impressum/</loc>
+        <loc>https://peter-stuhlmann-fotografie.de/datenschutzerklaerung/</loc>
         <lastmod>2020-02-28</lastmod>
     </url>
     <url>
-        <loc>https://peter-stuhlmann-fotografie/datenschutzerklaerung/</loc>
+        <loc>https://peter-stuhlmann-fotografie.de/sitemap/</loc>
         <lastmod>2020-02-28</lastmod>
     </url>
     <url>
-        <loc>https://peter-stuhlmann-fotografie/sitemap/</loc>
-        <lastmod>2020-02-28</lastmod>
-    </url>
-    <url>
-        <loc>https://peter-stuhlmann-fotografie/blog/</loc>
+        <loc>https://peter-stuhlmann-fotografie.de/blog/</loc>
         <lastmod>2020-02-28</lastmod>
     </url>
 </urlset>
