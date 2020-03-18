@@ -28,42 +28,47 @@ export default function Footer() {
         <nav>
           <h3>{text.footer.navigation.general.heading}</h3>
           <span onClick={toggleTheming}>{themeModeButton}</span>
-          {text.footer.navigation.general.list.map(links => (
-            <Link key={links.href} to={links.href}>
-              {links.linkText}
+          {text.footer.navigation.general.list.map(link => (
+            <Link key={link.path} to={link.path}>
+              {link.linkText}
             </Link>
           ))}
         </nav>
         <nav>
           <h3>{text.footer.navigation.legal.heading}</h3>
-          {text.footer.navigation.legal.list.map(links => (
-            <Link key={links.href} to={links.href}>
-              {links.linkText}
+          {text.footer.navigation.legal.list.map(link => (
+            <Link key={link.path} to={link.path}>
+              {link.linkText}
             </Link>
           ))}
           <span onClick={toggleTracking}>{button}</span>
         </nav>
         <nav>
           <h3>{text.footer.navigation.languages.heading}</h3>
-          {text.footer.navigation.languages.list.map(links => (
-            <Link key={links.href} to={links.href}>
-              {links.linkText}
+          {text.footer.navigation.languages.list.map(link => (
+            <Link key={link.path} to={link.path}>
+              {link.linkText}
             </Link>
           ))}
         </nav>
         <nav>
           <h3>{text.footer.navigation.products.heading}</h3>
-          {text.footer.navigation.products.list.map(links => (
-            <Link key={links.href} to={links.href}>
-              {links.linkText}
+          {text.footer.navigation.products.list.map(link => (
+            <Link key={link.path} to={link.path}>
+              {link.linkText}
             </Link>
           ))}
         </nav>
         <nav>
           <h3>{text.footer.navigation.links.heading}</h3>
-          {text.footer.navigation.links.list.map(links => (
-            <a key={links.href} href={links.href}>
-              {links.linkText}
+          {text.footer.navigation.links.list.map(link => (
+            <a
+              key={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={link.href}
+            >
+              {link.linkText}
             </a>
           ))}
         </nav>
