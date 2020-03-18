@@ -9,41 +9,18 @@ export default function NotFound() {
   return (
     <Fragment>
       <h1>{text.notFound.heading}</h1>
-      <p>
-        {text.notFound.list.heading}
+      <div>
+        <h2>{text.notFound.list.heading}</h2>
         <UL>
-          <li>
-            <Link to={text.notFound.list.links[0].href}>
-              {text.notFound.list.links[0].linkText}
-            </Link>
-          </li>
-          <li>
-            <Link to={text.notFound.list.links[1].href}>
-              {text.notFound.list.links[1].linkText}
-            </Link>
-          </li>
-          <li>
-            <Link to={text.notFound.list.links[2].href}>
-              {text.notFound.list.links[2].linkText}
-            </Link>
-          </li>
-          <li>
-            <Link to={text.notFound.list.links[3].href}>
-              {text.notFound.list.links[3].linkText}
-            </Link>
-          </li>
-          <li>
-            <Link to={text.notFound.list.links[4].href}>
-              {text.notFound.list.links[4].linkText}
-            </Link>
-          </li>
-          <li>
-            <Link to={text.notFound.list.links[5].href}>
-              {text.notFound.list.links[5].linkText}
-            </Link>
-          </li>
+          {text.notFound.list.links.map(link => (
+            <li key={link.path}>
+              <Link title={link.linkText} to={link.path}>
+                {link.linkText}
+              </Link>
+            </li>
+          ))}
         </UL>
-      </p>
+      </div>
     </Fragment>
   );
 }
