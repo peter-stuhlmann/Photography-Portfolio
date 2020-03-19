@@ -1,7 +1,9 @@
 import React, { Fragment, useContext } from 'react';
 import styled from 'styled-components';
+
 import { Context } from '../../Context';
 import { TwoColumns } from '../styled-components/Columns';
+import { codeBackground } from '../styled-components/Themes';
 
 export default function PhotoAPI() {
   const { text } = useContext(Context);
@@ -27,7 +29,7 @@ export default function PhotoAPI() {
 }
 
 const Code = styled.div`
-  background-color: #ededed;
+  background-color: ${codeBackground};
   border-radius: 10px;
   font-family: monospace;
   font-size: 13px;
