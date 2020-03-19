@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Context } from '../Context';
-import { UL } from './styled-components/List';
+import { Context } from '../../Context';
+import { UL } from '../styled-components/List';
 
 export default function Sitemap() {
   const { text } = useContext(Context);

@@ -1,10 +1,10 @@
 import React, { Fragment, useContext, useState, useCallback } from 'react';
 import Gallery from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway } from 'react-images';
-import { Context } from '../Context';
+import { Context } from '../../Context';
 
-export default function Nudes() {
-  const { nudes } = useContext(Context);
+export default function Portraits() {
+  const { portraits } = useContext(Context);
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
@@ -18,15 +18,15 @@ export default function Nudes() {
     setViewerIsOpen(false);
   };
 
-  return nudes ? (
+  return portraits ? (
     <Fragment>
-      <Gallery photos={nudes} onClick={openLightbox} />
+      <Gallery photos={portraits} onClick={openLightbox} />
       <ModalGateway>
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>
             <Carousel
               currentIndex={currentImage}
-              views={nudes.map(x => ({
+              views={portraits.map(x => ({
                 ...x,
                 srcset: x.srcSet,
                 caption: x.title,

@@ -1,8 +1,8 @@
 import React, { Fragment, useContext } from 'react';
-import { Context } from '../Context';
-import { TwoColumns } from './styled-components/Columns';
-import { Image } from './styled-components/Image';
-import Testimonials from './Testimonials';
+import { Context } from '../../Context';
+import { TwoColumns } from '../styled-components/Columns';
+import { Image } from '../styled-components/Image';
+import Testimonials from '../Testimonials';
 
 export default function About() {
   const { text } = useContext(Context);

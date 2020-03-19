@@ -1,6 +1,6 @@
 import React, { Fragment, useContext } from 'react';
-import { Context } from '../Context';
-import { UL } from './styled-components/List';
+import { Context } from '../../Context';
+import { UL } from '../styled-components/List';
 
 export default function Contact() {
   const { text } = useContext(Context);

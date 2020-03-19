@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from 'react';
 import styled from 'styled-components';
-import { Context } from '../Context';
-import { TwoColumns } from './styled-components/Columns';
+import { Context } from '../../Context';
+import { TwoColumns } from '../styled-components/Columns';
 
 export default function PhotoAPI() {
   const { text } = useContext(Context);

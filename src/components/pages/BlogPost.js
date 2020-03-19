@@ -1,5 +1,5 @@
 import React, { Fragment, useContext } from 'react';
-import { Context } from '../Context';
+import { Context } from '../../Context';
 import NotFound from './NotFound';
 
 export default function BlogPost() {

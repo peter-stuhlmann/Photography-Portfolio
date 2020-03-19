@@ -1,8 +1,8 @@
 import React, { Fragment, useContext } from 'react';
 
-import { Context } from '../Context';
-import { Image } from './styled-components/Image';
-import { TwoColumns } from './styled-components/Columns';
+import { Context } from '../../Context';
+import { Image } from '../styled-components/Image';
+import { TwoColumns } from '../styled-components/Columns';
 
 export default function Vouchers() {
   const { text } = useContext(Context);

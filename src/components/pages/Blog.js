@@ -2,8 +2,8 @@ import React, { Fragment, useContext } from 'react';
 import LazyLoad from 'react-lazy-load';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Context } from '../Context';
-import { cardBackground, textColor } from './styled-components/Themes';
+import { Context } from '../../Context';
+import { cardBackground, textColor } from '../styled-components/Themes';
 
 export default function Blog() {
   const { posts, text } = useContext(Context);

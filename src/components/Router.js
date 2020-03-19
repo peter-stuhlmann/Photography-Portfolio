@@ -1,19 +1,20 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import About from './About';
-import Contact from './Contact';
-import NotFound from './NotFound';
-import LegalNotice from './LegalNotice';
-import PrivacyPolicy from './PrivacyPolicy';
-import Prices from './Prices';
-import Sitemap from './Sitemap';
-import Blog from './Blog';
-import BlogPost from './BlogPost';
-import Portraits from './Portraits';
-import Nudes from './Nudes';
-import Landscapes from './Landscapes';
-import PhotoAPI from './PhotoAPI';
-import GeneralTerms from './GeneralTerms';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
+import LegalNotice from './pages/LegalNotice';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Prices from './pages/Prices';
+import Sitemap from './pages/Sitemap';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
+import Portraits from './pages/Portraits';
+import Nudes from './pages/Nudes';
+import Landscapes from './pages/Landscapes';
+import PhotoAPI from './pages/PhotoAPI';
+import GeneralTerms from './pages/GeneralTerms';
+import Vouchers from './pages/Vouchers';
 import { ga } from '../helpers/analytics';
 
 export default function Router() {
@@ -30,6 +31,7 @@ export default function Router() {
       <Route exact path="/ueber-mich" component={ga(About)} />
       <Route exact path="/sitemap" component={ga(Sitemap)} />
       <Route exact path="/api" component={ga(PhotoAPI)} />
+      <Route exact path="/gutscheine" component={ga(Vouchers)} />
       <Route exact path="/agb" component={ga(GeneralTerms)} />
       <Route exact path="/impressum" component={ga(LegalNotice)} />
       <Route

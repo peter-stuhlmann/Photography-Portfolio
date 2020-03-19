@@ -1,7 +1,7 @@
 import React, { Fragment, useContext, useState, useCallback } from 'react';
 import Gallery from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway } from 'react-images';
-import { Context } from '../Context';
+import { Context } from '../../Context';
 
 export default function Landscapes() {
   const { landscapes } = useContext(Context);
