@@ -12,6 +12,7 @@ const StyledTwoColumns = styled.div`
 
   .column-left {
     flex: 0 0 100%;
+    margin-bottom: 20px;
 
     @media (min-width: 1300px) {
       flex: ${props => props.columnLeft || '0 0 50%'};
@@ -20,6 +21,7 @@ const StyledTwoColumns = styled.div`
 
   .column-right {
     flex: 0 0 100%;
+    margin-bottom: 20px;
 
     @media (min-width: 1300px) {
       flex: ${props => props.columnRight || '0 0 50%'};

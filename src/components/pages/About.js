@@ -34,7 +34,7 @@ export default function About() {
             src={text.about.img[0].src}
             alt={text.about.img[0].alt}
             title={text.about.img[0].title}
-            style={{ marginBottom: '45px' }}
+            style={{ marginTop: '1em', marginBottom: '45px' }}
           />
         </div>
       </TwoColumns>

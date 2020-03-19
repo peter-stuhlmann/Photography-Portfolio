@@ -21,7 +21,11 @@ export default function Vouchers() {
           </p>
         </div>
         <div className="column-right">
-          <Image src={text.vouchers.image.src} alt={text.vouchers.image.alt} />
+          <Image
+            src={text.vouchers.image.src}
+            alt={text.vouchers.image.alt}
+            style={{ marginTop: '1em' }}
+          />
         </div>
       </TwoColumns>
     </Fragment>

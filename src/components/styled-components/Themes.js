@@ -19,3 +19,13 @@ export const codeBackground = theme('mode', {
   light: '#ededed',
   dark: '#1c1c1c',
 });
+
+export const buttonBackgroundColor = theme('mode', {
+  light: '#1c1c1c',
+  dark: '#ededed',
+});
+
+export const buttonTextColor = theme('mode', {
+  light: '#ededed',
+  dark: '#1c1c1c',
+});
