@@ -15,6 +15,7 @@ import Landscapes from './pages/Landscapes';
 import PhotoAPI from './pages/PhotoAPI';
 import GeneralTerms from './pages/GeneralTerms';
 import Vouchers from './pages/Vouchers';
+import Calendar from './pages/Calendar';
 import { ga } from '../helpers/analytics';
 
 export default function Router() {
@@ -32,6 +33,7 @@ export default function Router() {
       <Route exact path="/sitemap" component={ga(Sitemap)} />
       <Route exact path="/api" component={ga(PhotoAPI)} />
       <Route exact path="/gutscheine" component={ga(Vouchers)} />
+      <Route exact path="/kalender" component={ga(Calendar)} />
       <Route exact path="/agb" component={ga(GeneralTerms)} />
       <Route exact path="/impressum" component={ga(LegalNotice)} />
       <Route
