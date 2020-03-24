@@ -16,7 +16,7 @@ export default function PhotoAPI() {
         <div className="column-left">
           <p>{text.api.text}</p>
         </div>
-        <div className="column-right">
+        <div className="column-right" style={{ overflowX: 'hidden' }}>
           <Code
             dangerouslySetInnerHTML={{
               __html: text.api.code,
@@ -34,12 +34,19 @@ const Code = styled.div`
   font-family: monospace;
   font-size: 13px;
   padding: 20px;
+  box-sizing: border-box;
 
-  .second-level {
-    padding-left: 20px;
-  }
+  & > div {
+    overflow-x: auto;
 
-  .third-level {
-    padding-left: 40px;
+    .second-level {
+      padding-left: 20px;
+      white-space: nowrap;
+    }
+
+    .third-level {
+      padding-left: 40px;
+      white-space: nowrap;
+    }
   }
 `;
