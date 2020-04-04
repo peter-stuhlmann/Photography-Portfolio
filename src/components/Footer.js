@@ -126,6 +126,10 @@ const StyledFooter = styled.footer`
         color: #fff;
         font-weight: normal;
         text-transform: uppercase;
+
+        @media screen and (max-width: 768px) {
+          font-weight: bold;
+        }
       }
 
       a,
