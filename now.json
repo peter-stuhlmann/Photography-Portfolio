@@ -1,0 +1,43 @@
+{
+  "version": 2,
+  "name": "photography-portfolio",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "build" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "headers": { "cache-control": "s-maxage=31536000,immutable" },
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/images/(.*)",
+      "headers": { "cache-control": "s-maxage=604800,immutable" },
+      "dest": "/images/$1"
+    },
+    {
+      "src": "/dokumente/(.*)",
+      "headers": { "cache-control": "s-maxage=604800,immutable" },
+      "dest": "/dokumente/$1"
+    },
+    {
+      "src": "/portfolio/(.*)",
+      "headers": { "cache-control": "s-maxage=604800,immutable" },
+      "dest": "/portfolio/$1"
+    },
+    {
+      "src": "/testimonials/(.*)",
+      "headers": { "cache-control": "s-maxage=604800,immutable" },
+      "dest": "/testimonials/$1"
+    },
+    {
+      "src": "/(.*)",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/index.html"
+    }
+  ]
+}
