@@ -1,10 +1,38 @@
-import React, { Fragment, useContext, useState, useCallback } from 'react';
+import React, {
+  Fragment,
+  useContext,
+  useEffect,
+  useState,
+  useCallback,
+} from 'react';
+import { useInView } from 'react-intersection-observer';
 import Gallery from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway } from 'react-images';
+
 import { Context } from '../../Context';
+import { debounce } from '../../helpers/debounce';
+import { text } from '../../data/Text';
 
 export default function Portraits() {
-  const { portraits } = useContext(Context);
+  const { portraits, landscapes, nudes } = useContext(Context);
+
+  const route = window.location.pathname;
+  let photos;
+
+  switch (route) {
+    case '/':
+      photos = portraits;
+      break;
+    case '/landschaftsfotografie':
+      photos = landscapes;
+      break;
+    case '/akt':
+      photos = nudes;
+      break;
+    default:
+      photos = null;
+  }
+
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
@@ -18,15 +46,35 @@ export default function Portraits() {
     setViewerIsOpen(false);
   };
 
-  return portraits ? (
+  const [images, setImages] = useState(photos.slice(0, 6));
+  const [amount, setAmount] = useState(6);
+  const [loadedAll, setLoadedAll] = useState(false);
+
+  const [ref, inView] = useInView();
+
+  const loadMorePhotos = debounce(() => {
+    if (amount > photos.length) {
+      setLoadedAll(true);
+    }
+    setImages(images.concat(photos.slice(images.length, images.length + 6)));
+    setAmount(amount + 6);
+  }, 200);
+
+  useEffect(() => {
+    if (inView === true) {
+      loadMorePhotos();
+    }
+  });
+
+  return (
     <Fragment>
-      <Gallery photos={portraits} onClick={openLightbox} />
+      <Gallery photos={images} onClick={openLightbox} />
       <ModalGateway>
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>
             <Carousel
               currentIndex={currentImage}
-              views={portraits.map(x => ({
+              views={images.map(x => ({
                 ...x,
                 srcset: x.srcSet,
                 caption: x.title,
@@ -35,8 +83,7 @@ export default function Portraits() {
           </Modal>
         ) : null}
       </ModalGateway>
+      {!loadedAll && <div ref={ref}>{text.gallery.loading}</div>}
     </Fragment>
-  ) : (
-    'Bilder werden geladen ...'
   );
 }
