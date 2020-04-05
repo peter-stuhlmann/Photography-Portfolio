@@ -12,7 +12,7 @@ const Prices = lazy(() => import('./pages/Prices'));
 const Sitemap = lazy(() => import('./pages/Sitemap'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
-const Portraits = lazy(() => import('./pages/Portraits'));
+const PortfolioGallery = lazy(() => import('./pages/PortfolioGallery'));
 const PhotoAPI = lazy(() => import('./pages/PhotoAPI'));
 const GeneralTerms = lazy(() => import('./pages/GeneralTerms'));
 const Vouchers = lazy(() => import('./pages/Vouchers'));
@@ -23,10 +23,14 @@ export default function Router() {
   return (
     <Suspense fallback={<div>Inhalt wird geladen...</div>}>
       <Switch>
-        <Route exact path="/" component={ga(Portraits)} />
+        <Route exact path="/" component={ga(PortfolioGallery)} />
         <Route exact path="/portraits" render={() => <Redirect to="/" />} />
-        <Route exact path="/akt" component={ga(Portraits)} />
-        <Route exact path="/landschaftsfotografie" component={ga(Portraits)} />
+        <Route exact path="/akt" component={ga(PortfolioGallery)} />
+        <Route
+          exact
+          path="/landschaftsfotografie"
+          component={ga(PortfolioGallery)}
+        />
         <Route exact path="/blog" component={ga(Blog)} />
         <Route exact path="/blog/:slug" component={ga(BlogPost)} />
         <Route exact path="/kontakt" component={ga(Contact)} />

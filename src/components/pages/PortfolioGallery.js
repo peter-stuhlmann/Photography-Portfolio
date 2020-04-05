@@ -13,7 +13,7 @@ import { Context } from '../../Context';
 import { debounce } from '../../helpers/debounce';
 import { text } from '../../data/Text';
 
-export default function Portraits() {
+export default function PortfolioGallery() {
   const { portraits, landscapes, nudes } = useContext(Context);
 
   const route = window.location.pathname;
