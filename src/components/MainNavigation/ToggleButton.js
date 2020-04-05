@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+
+import { Context } from '../../Context';
 import { textColor } from '../styled-components/Themes';
 
-const ToggleButton = ({ open, setOpen }) => (
-  <StyledToggleButton open={open} onClick={() => setOpen(!open)}>
-    <div />
-    <div />
-    <div />
-  </StyledToggleButton>
-);
+export default function ToggleButton({ open, setOpen }) {
+  const { text } = useContext(Context);
 
-export default ToggleButton;
+  return (
+    <StyledToggleButton
+      open={open}
+      onClick={() => setOpen(!open)}
+      aria-label={text.header.toggleButton}
+    >
+      <div />
+      <div />
+      <div />
+    </StyledToggleButton>
+  );
+}
 
 const StyledToggleButton = styled.button`
   background-color: transparent;
