@@ -29,6 +29,7 @@ const StyledToggleButton = styled.button`
   height: 25px;
   justify-content: space-around;
   padding: 0;
+  position: ${({ open }) => (open ? 'fixed' : 'static')};
   width: 26px;
   z-index: 2;
 
