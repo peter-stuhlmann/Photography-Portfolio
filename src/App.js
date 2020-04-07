@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import { ThemeProvider } from 'styled-components';
 import CookieConsentBanner from './components/CookieConsentBanner';
 import Router from './components/Router';
+import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
   const { themeMode } = useContext(Context);
@@ -16,6 +17,7 @@ export default function App() {
   return (
     <ThemeProvider theme={{ mode: themeMode }}>
       <BrowserRouter>
+        <ScrollToTop />
         <GlobalStyles />
         <CookieConsentBanner />
         <Header />
