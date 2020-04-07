@@ -8,6 +8,15 @@ export default function SubFooter() {
 
   const currentYear = new Date().getFullYear();
 
+  console.log(
+    `%c\n${text.console.heading}\n` +
+      `%c${text.console.text}\n` +
+      `%c${text.console.link}\n`,
+    'color: #282828; font-size: 23px',
+    'color: #282828; font-size: 14px',
+    'font-size: 14px'
+  );
+
   return (
     <StyledSubFooter>
       <div>
