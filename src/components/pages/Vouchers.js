@@ -3,9 +3,13 @@ import React, { Fragment, useContext } from 'react';
 import { Context } from '../../Context';
 import { Image } from '../styled-components/Image';
 import { TwoColumns } from '../styled-components/Columns';
+import { meta } from '../../helpers/meta';
 
 export default function Vouchers() {
   const { text } = useContext(Context);
+
+  document.title = text.voucher.meta.title;
+  meta('name', 'description', text.voucher.meta.description);
 
   return (
     <Fragment>

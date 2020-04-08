@@ -1,8 +1,13 @@
 import React, { Fragment, useContext } from 'react';
+
 import { Context } from '../../Context';
+import { meta } from '../../helpers/meta';
 
 export default function GeneralTerms() {
   const { legal } = useContext(Context);
+
+  document.title = legal.legalTerms.meta.title;
+  meta('name', 'description', legal.legalTerms.meta.description);
 
   return (
     <Fragment>

@@ -3,9 +3,13 @@ import { Context } from '../../Context';
 import { TwoColumns } from '../styled-components/Columns';
 import { Image } from '../styled-components/Image';
 import Testimonials from '../Testimonials';
+import { meta } from '../../helpers/meta';
 
 export default function About() {
   const { text } = useContext(Context);
+
+  document.title = text.about.meta.title;
+  meta('name', 'description', text.about.meta.description);
 
   return (
     <Fragment>

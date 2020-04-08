@@ -1,10 +1,15 @@
 import React, { Fragment, useContext } from 'react';
 import { Link } from 'react-router-dom';
+
 import { Context } from '../../Context';
 import { UL } from '../styled-components/List';
+import { meta } from '../../helpers/meta';
 
 export default function NotFound() {
   const { text } = useContext(Context);
+
+  document.title = text.notFound.meta.title;
+  meta('name', 'description', text.notFound.meta.description);
 
   return (
     <Fragment>

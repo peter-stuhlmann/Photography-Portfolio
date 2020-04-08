@@ -12,6 +12,7 @@ import Carousel, { Modal, ModalGateway } from 'react-images';
 import { Context } from '../../Context';
 import { debounce } from '../../helpers/debounce';
 import { text } from '../../data/Text';
+import { meta } from '../../helpers/meta';
 
 export default function PortfolioGallery() {
   const { portraits, landscapes, nudes } = useContext(Context);
@@ -22,12 +23,18 @@ export default function PortfolioGallery() {
   switch (route) {
     case '/':
       photos = portraits;
+      document.title = text.portraits.meta.title;
+      meta('name', 'description', text.portraits.meta.description);
       break;
     case '/landschaftsfotografie':
       photos = landscapes;
+      document.title = text.landscapes.meta.title;
+      meta('name', 'description', text.landscapes.meta.description);
       break;
     case '/akt':
       photos = nudes;
+      document.title = text.nudes.meta.title;
+      meta('name', 'description', text.nudes.meta.description);
       break;
     default:
       photos = null;

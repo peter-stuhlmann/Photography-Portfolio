@@ -1,9 +1,14 @@
 import React, { Fragment, useContext } from 'react';
+
 import { Context } from '../../Context';
 import { UL } from '../styled-components/List';
+import { meta } from '../../helpers/meta';
 
 export default function Contact() {
   const { text } = useContext(Context);
+
+  document.title = text.contact.meta.title;
+  meta('name', 'description', text.contact.meta.description);
 
   return (
     <Fragment>
