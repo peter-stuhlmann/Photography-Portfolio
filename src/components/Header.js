@@ -22,7 +22,7 @@ export default function Header() {
 const StyledHeader = styled.header`
   text-transform: uppercase;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1000px) {
     padding: 50px 20px 20px 20px;
   }
 
@@ -57,7 +57,7 @@ const StyledHeader = styled.header`
       margin: 0;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1000px) {
       display: block;
     }
 

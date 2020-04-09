@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { Fragment, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../../Context';
 import styled from 'styled-components';
@@ -9,11 +9,59 @@ function Navbar({ open }) {
 
   return (
     <StyledNavbar open={open}>
+      {window.innerWidth < 1000 ? (
+        <h3 style={{ marginTop: '50px' }}>
+          {text.footer.navigation.general.heading}
+        </h3>
+      ) : null}
       {text.header.navigation.map(links => (
         <Link key={links.href} to={links.href}>
           {links.linkText}
         </Link>
       ))}
+
+      {window.innerWidth < 1000 ? (
+        <Fragment>
+          {text.footer.navigation.general.list.map(link => (
+            <Link key={link.path} to={link.path}>
+              {link.linkText}
+            </Link>
+          ))}
+
+          <h3>{text.footer.navigation.products.heading}</h3>
+          {text.footer.navigation.products.list.map(link => (
+            <Link key={link.path} to={link.path}>
+              {link.linkText}
+            </Link>
+          ))}
+
+          <h3>{text.footer.navigation.links.heading}</h3>
+          {text.footer.navigation.links.list.map(link => (
+            <a
+              key={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={link.href}
+            >
+              {link.linkText}
+            </a>
+          ))}
+
+          <h3>{text.footer.navigation.languages.heading}</h3>
+          {text.footer.navigation.languages.list.map(link => (
+            <Link key={link.path} to={link.path}>
+              {link.linkText}
+            </Link>
+          ))}
+
+          <h3>{text.footer.navigation.legal.heading}</h3>
+          {text.footer.navigation.legal.list.map(link => (
+            <Link key={link.path} to={link.path}>
+              {link.linkText}
+            </Link>
+          ))}
+        </Fragment>
+      ) : null}
     </StyledNavbar>
   );
 }
@@ -28,7 +76,7 @@ const StyledNavbar = styled.nav`
   flex-direction: column;
   height: 100vh;
   left: 0;
-  max-width: 80vw;
+  max-width: 100vw;
   overflow-y: auto;
   padding: 0;
   position: fixed;
@@ -37,7 +85,7 @@ const StyledNavbar = styled.nav`
   transform: ${({ open }) =>
     open ? 'translateX(0)' : 'translateX(calc(-100% - 7px))'};
   transition: transform 0.3s ease-in-out;
-  width: 300px;
+  width: 444px;
   z-index: 1;
 
   @media (min-width: 1650px) {
@@ -62,7 +110,11 @@ const StyledNavbar = styled.nav`
     }
   }
 
-  @media (min-width: 768px) {
+  h3 {
+    padding: 7px 12px;
+  }
+
+  @media (min-width: 1000px) {
     box-shadow: none;
     display: block;
     height: 30px;

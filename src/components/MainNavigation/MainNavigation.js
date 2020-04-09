@@ -49,7 +49,7 @@ const StyledMainNavigation = styled.div`
     padding: 0;
   }
 
-  @media (min-width: 768px) and (max-width: 1649px) {
+  @media (min-width: 1000px) and (max-width: 1649px) {
     margin-top: 25px;
   }
 
@@ -62,8 +62,16 @@ const StyledMainNavigation = styled.div`
     margin-left: 15px;
     text-align: center;
     width: 100%;
+    font-size: 13px;
 
-    @media (min-width: 768px) {
+    @media (min-width: 360px) {
+      font-size: 14px;
+    }
+    @media (min-width: 400px) {
+      font-size: 16px;
+    }
+
+    @media (min-width: 1000px) {
       display: none;
     }
 

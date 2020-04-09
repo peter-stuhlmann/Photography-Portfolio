@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import { Context } from '../../Context';
-import { textColor } from '../styled-components/Themes';
+import { backgroundColor, textColor } from '../styled-components/Themes';
 
 export default function ToggleButton({ open, setOpen }) {
   const { text } = useContext(Context);
@@ -21,16 +21,17 @@ export default function ToggleButton({ open, setOpen }) {
 }
 
 const StyledToggleButton = styled.button`
-  background-color: transparent;
+  background-color: ${backgroundColor};
   border: none;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  height: 25px;
+  height: 50px;
   justify-content: space-around;
-  padding: 0;
+  margin: -15px;
+  padding: 12px;
   position: ${({ open }) => (open ? 'fixed' : 'static')};
-  width: 26px;
+  width: ${({ open }) => (open ? '443px' : '50px')};
   z-index: 2;
 
   &:focus {
@@ -60,7 +61,7 @@ const StyledToggleButton = styled.button`
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1000px) {
     display: none;
   }
 `;
