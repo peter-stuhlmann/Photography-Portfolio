@@ -8,21 +8,20 @@ import { meta } from '../../helpers/meta';
 export default function Vouchers() {
   const { text } = useContext(Context);
 
-  document.title = text.voucher.meta.title;
-  meta('name', 'description', text.voucher.meta.description);
+  document.title = text.vouchers.meta.title;
+  meta('name', 'description', text.vouchers.meta.description);
 
   return (
     <Fragment>
       <h1>{text.vouchers.heading}</h1>
       <TwoColumns columnLeft="0 0 48%" columnRight="0 0 48%">
         <div className="column-left">
-          <p>
-            {text.vouchers.content[0]}
-            <a title={text.vouchers.link.title} href={text.vouchers.link.href}>
-              {text.vouchers.link.linkText}
-            </a>
-            {text.vouchers.content[1]}
-          </p>
+          {text.vouchers.content.map(text => (
+            <p key={text}>{text}</p>
+          ))}
+          <a title={text.vouchers.link.title} href={text.vouchers.link.href}>
+            {text.vouchers.link.linkText}
+          </a>
         </div>
         <div className="column-right">
           <Image
