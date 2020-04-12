@@ -17,7 +17,7 @@ const PhotoAPI = lazy(() => import('./pages/PhotoAPI'));
 const GeneralTerms = lazy(() => import('./pages/GeneralTerms'));
 const Vouchers = lazy(() => import('./pages/Vouchers'));
 const Calendar = lazy(() => import('./pages/Calendar'));
-const Documents = lazy(() => import('./pages/Documents'));
+const Downloads = lazy(() => import('./pages/Downloads'));
 
 export default function Router() {
   return (
@@ -35,7 +35,7 @@ export default function Router() {
         <Route exact path="/blog/:slug" component={ga(BlogPost)} />
         <Route exact path="/kontakt" component={ga(Contact)} />
         <Route exact path="/preise" component={ga(Prices)} />
-        <Route exact path="/dokumente" component={ga(Documents)} />
+        <Route exact path="/downloads" component={ga(Downloads)} />
         <Route exact path="/ueber-mich" component={ga(About)} />
         <Route exact path="/sitemap" component={ga(Sitemap)} />
         <Route exact path="/api" component={ga(PhotoAPI)} />
