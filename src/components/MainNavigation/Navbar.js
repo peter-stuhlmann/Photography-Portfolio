@@ -5,8 +5,23 @@ import styled from 'styled-components';
 import { backgroundColor, textColor } from '../styled-components/Themes';
 
 function Navbar({ open }) {
-  const { text } = useContext(Context);
+  const {
+    text,
+    toggleTracking,
+    tracking,
+    toggleTheming,
+    themeMode,
+  } = useContext(Context);
 
+  let button;
+  tracking === false
+    ? (button = 'Google Analytics aktivieren')
+    : (button = 'Google Analytics deaktivieren');
+
+  let themeModeButton;
+  themeMode === 'light'
+    ? (themeModeButton = 'Dark Theme')
+    : (themeModeButton = 'Light Theme');
   return (
     <StyledNavbar open={open}>
       {window.innerWidth < 1000 ? (
@@ -27,6 +42,7 @@ function Navbar({ open }) {
               {link.linkText}
             </Link>
           ))}
+          <span onClick={toggleTheming}>{themeModeButton}</span>
 
           <h3>{text.footer.navigation.products.heading}</h3>
           {text.footer.navigation.products.list.map(link => (
@@ -60,6 +76,7 @@ function Navbar({ open }) {
               {link.linkText}
             </Link>
           ))}
+          <span onClick={toggleTracking}>{button}</span>
         </Fragment>
       ) : null}
     </StyledNavbar>
@@ -92,9 +109,12 @@ const StyledNavbar = styled.nav`
     text-align: right;
   }
 
-  a {
+  a,
+  span {
     color: ${textColor};
     font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
     padding: 7px 12px;
     text-decoration: none;
     transition: 0.2s;
