@@ -6,12 +6,14 @@ import {
   buttonBackgroundColor,
   buttonTextColor,
 } from '../styled-components/Themes';
-import { Pdf } from '../Icons';
+import { Mail, Pdf } from '../Icons';
 
 export const ButtonLink = props => {
   const { external, href, linkText, title, style } = props;
 
-  return external || href.substring(href.length - 4) === '.pdf' ? (
+  return external ||
+    href.substring(href.length - 4) === '.pdf' ||
+    href.slice(0, 6) === 'mailto' ? (
     <StyledButtonExternalLink
       href={href}
       style={style}
@@ -19,7 +21,9 @@ export const ButtonLink = props => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      {href.substring(href.length - 4) === '.pdf' ? <Pdf /> : null} {linkText}
+      {href.substring(href.length - 4) === '.pdf' ? <Pdf /> : null}
+      {href.slice(0, 6) === 'mailto' ? <Mail /> : null}
+      {linkText}
     </StyledButtonExternalLink>
   ) : (
     <StyledButtonLink to={href} style={style} title={title}>
@@ -34,13 +38,6 @@ const StyledButtonLink = styled(Link)`
   color: ${buttonTextColor} !important;
   padding: 7px 15px;
   text-decoration: none;
-
-  svg {
-    fill: ${buttonTextColor};
-    height: 16px;
-    margin-bottom: -2px
-    margin-right: 10px;
-  }
 `;
 
 const StyledButtonExternalLink = styled.a`
