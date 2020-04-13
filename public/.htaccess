@@ -1,4 +1,16 @@
+
+# Routing
 Options -MultiViews
-    RewriteEngine On
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.html [QSA,L]
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]
+
+# Cache control
+<FilesMatch "\.(ico|png|jpg|jpeg)$">
+  # 30 days
+	Header Set Cache-Control "max-age=2592000, public"
+</FilesMatch>
+<FilesMatch "\.(js|svg|ttf)$">
+  # 365 days
+  Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
