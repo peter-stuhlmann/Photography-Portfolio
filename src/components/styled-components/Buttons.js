@@ -5,9 +5,10 @@ import {
   buttonBackgroundColor,
   buttonTextColor,
 } from '../styled-components/Themes';
+import { Pdf } from '../Icons';
 
 export const ButtonLink = props => {
-  const { href, linkText, title, style } = props;
+  const { href, linkText, pdf, title, style } = props;
 
   return (
     <StyledButtonLink
@@ -17,7 +18,7 @@ export const ButtonLink = props => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      {linkText}
+      {pdf ? <Pdf /> : null} {linkText}
     </StyledButtonLink>
   );
 };
@@ -28,4 +29,11 @@ const StyledButtonLink = styled.a`
   color: ${buttonTextColor};
   padding: 7px 15px;
   text-decoration: none;
+
+  svg {
+    fill: ${buttonTextColor};
+    height: 16px;
+    margin-bottom: -2px
+    margin-right: 10px;
+  }
 `;
