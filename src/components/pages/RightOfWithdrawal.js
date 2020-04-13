@@ -1,9 +1,13 @@
 import React, { Fragment, useContext } from 'react';
+import styled from 'styled-components';
 
 import { Context } from '../../Context';
 import { TwoColumns } from '../styled-components/Columns';
 import { UL } from '../styled-components/List';
+import { textColor } from '../styled-components/Themes';
+import { ButtonLink } from '../styled-components/Buttons';
 import { meta } from '../../helpers/meta';
+import { Pdf } from '../Icons';
 
 export default function RightOfWithdrawal() {
   const { legal } = useContext(Context);
@@ -27,13 +31,7 @@ export default function RightOfWithdrawal() {
           ))}
         </div>
         <div className="column-right">
-          <div
-            style={{
-              border: '1px solid #282828',
-              marginBottom: '25px',
-              padding: '25px',
-            }}
-          >
+          <Box>
             <h2>{legal.rightOfWithdrawal.model.heading}</h2>
             <i>{legal.rightOfWithdrawal.model.description}</i>
             <UL>
@@ -42,12 +40,20 @@ export default function RightOfWithdrawal() {
               ))}
             </UL>
             <i>{legal.rightOfWithdrawal.model.footnote}</i>
-          </div>
-          <a href={legal.rightOfWithdrawal.model.pdf.href}>
-            {legal.rightOfWithdrawal.model.pdf.linkText}
-          </a>
+          </Box>
+          <ButtonLink
+            pdf
+            href={legal.rightOfWithdrawal.model.pdf.href}
+            linkText={legal.rightOfWithdrawal.model.pdf.linkText}
+          />
         </div>
       </TwoColumns>
     </Fragment>
   );
 }
+
+const Box = styled.ul`
+  border: 1px solid ${textColor};
+  margin-bottom: 25px;
+  padding: 25px;
+`;
