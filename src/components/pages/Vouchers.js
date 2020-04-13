@@ -3,6 +3,7 @@ import React, { Fragment, useContext } from 'react';
 import { Context } from '../../Context';
 import { Image } from '../styled-components/Image';
 import { TwoColumns } from '../styled-components/Columns';
+import { ButtonLink } from '../styled-components/Buttons';
 import { meta } from '../../helpers/meta';
 
 export default function Vouchers() {
@@ -19,9 +20,11 @@ export default function Vouchers() {
           {text.vouchers.content.map(text => (
             <p key={text}>{text}</p>
           ))}
-          <a title={text.vouchers.link.title} href={text.vouchers.link.href}>
-            {text.vouchers.link.linkText}
-          </a>
+          <ButtonLink
+            title={text.vouchers.link.title}
+            href={text.vouchers.link.href}
+            linkText={text.vouchers.link.linkText}
+          />
         </div>
         <div className="column-right">
           <Image
