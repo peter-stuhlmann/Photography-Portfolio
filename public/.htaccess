@@ -23,3 +23,16 @@ RewriteRule ^ index.html [QSA,L]
   SetOutputFilter DEFLATE
  </FilesMatch>
 </IfModule>
+
+# Prevent hotlinking
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?peter-stuhlmann-fotografie.de [NC]
+RewriteCond %{HTTP_REFERER} !google\. [NC]
+RewriteCond %{HTTP_REFERER} !yahoo\. [NC]
+RewriteCond %{HTTP_REFERER} !bing\. [NC] 
+RewriteCond %{HTTP_REFERER} !fbcdn\. [NC] 
+RewriteCond %{HTTP_REFERER} !facebook\. [NC] 
+RewriteCond %{HTTP_REFERER} !pinterest\. [NC] 
+RewriteCond %{HTTP_REFERER} !twimg\. [NC] 
+RewriteRule \.(jpg|jpeg|png|gif)$ https://image-placeholder.now.sh/?text=peter-stuhlmann-fotografie.de [NC,R,L]
