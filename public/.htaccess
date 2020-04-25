@@ -14,3 +14,12 @@ RewriteRule ^ index.html [QSA,L]
   # 365 days
   Header set Cache-Control "max-age=31536000, public"
 </FilesMatch>
+
+# Deflate Compression
+<IfModule mod_deflate.c>
+ <FilesMatch "\.(js|jpg|jpeg|gif|png|css|ttf)$">
+  ExpiresActive on
+  ExpiresDefault "access plus 1 month"
+  SetOutputFilter DEFLATE
+ </FilesMatch>
+</IfModule>
