@@ -7,7 +7,6 @@ import { UL } from '../styled-components/List';
 import { textColor } from '../styled-components/Themes';
 import { ButtonLink } from '../styled-components/Buttons';
 import { meta } from '../../helpers/meta';
-import { Pdf } from '../Icons';
 
 export default function RightOfWithdrawal() {
   const { legal } = useContext(Context);
@@ -52,7 +51,7 @@ export default function RightOfWithdrawal() {
   );
 }
 
-const Box = styled.ul`
+const Box = styled.div`
   border: 1px solid ${textColor};
   margin-bottom: 25px;
   padding: 25px;
