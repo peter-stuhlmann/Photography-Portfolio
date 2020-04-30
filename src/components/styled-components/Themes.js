@@ -21,11 +21,16 @@ export const codeBackground = theme('mode', {
 });
 
 export const buttonBackgroundColor = theme('mode', {
-  light: '#1c1c1c',
-  dark: '#ededed',
+  light: '#efefef',
+  dark: '#1c1c1c',
+});
+
+export const buttonBackgroundColorHover = theme('mode', {
+  light: '#d2d0d0',
+  dark: '#333333',
 });
 
 export const buttonTextColor = theme('mode', {
-  light: '#ededed',
-  dark: '#1c1c1c',
+  light: '#000',
+  dark: '#fff',
 });

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import {
   buttonBackgroundColor,
+  buttonBackgroundColorHover,
   buttonTextColor,
 } from '../styled-components/Themes';
 import { Mail, Pdf } from '../Icons';
@@ -38,6 +39,11 @@ const StyledButtonLink = styled(Link)`
   color: ${buttonTextColor} !important;
   padding: 7px 15px;
   text-decoration: none;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: ${buttonBackgroundColorHover};
+  }
 `;
 
 const StyledButtonExternalLink = styled.a`
@@ -46,6 +52,11 @@ const StyledButtonExternalLink = styled.a`
   color: ${buttonTextColor} !important;
   padding: 7px 15px;
   text-decoration: none;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: ${buttonBackgroundColorHover};
+  }
 
   svg {
     fill: ${buttonTextColor};
