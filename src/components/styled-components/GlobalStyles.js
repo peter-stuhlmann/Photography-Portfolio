@@ -18,6 +18,16 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 1.6;
     margin: 0;
 
+    .external-inline-link,
+    .internal-inline-link {
+      color: ${textColor};
+      transition: 0.2s;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
     // portfolio galleries
     .react-photo-gallery--gallery img {
       filter: grayscale(100%);
