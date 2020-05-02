@@ -10,6 +10,10 @@ export const GlobalStyles = createGlobalStyle`
     font-display: block;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: ${backgroundColor};
     color: ${textColor};
