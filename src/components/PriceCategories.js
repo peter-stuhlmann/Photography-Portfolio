@@ -19,19 +19,18 @@ export default function PriceCategories() {
   const images = useRef(null);
 
   return (
-    <StyledCategories>
+    <StyledCategories ref={images}>
       {text.prices.categories.map((category, index) => (
-        <div key={category.href} ref={images}>
+        <div
+          key={category.href}
+          onClick={() => {
+            setPriceCategoryIndex(index);
+            window.scrollTo(0, images.current.offsetTop);
+          }}
+        >
           <Link to={categoryPath[index]}>
-            <img
-              src={`https://image-placeholder.now.sh/?w=250&h=150&text=${category.title}&background=rgba(0,0,0,0.7)`}
-              alt={category.alt}
-              style={{ backgroundImage: `url(${category.img})` }}
-              onClick={() => {
-                setPriceCategoryIndex(index);
-                window.scrollTo(0, images.current.offsetTop);
-              }}
-            />
+            <img style={{ backgroundImage: `url(${category.img})` }} />
+            <p>{category.title}</p>
           </Link>
         </div>
       ))}
@@ -44,15 +43,45 @@ const StyledCategories = styled.div`
   flex-flow: row wrap;
   justify-content: space-between;
   margin: 0 0 100px 0;
+  padding-top: 25px;
 
   div {
     flex: 0 0 15%;
-    padding-top: 25px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+      img {
+        filter: grayscale(0%);
+        transform: scale(1.05);
+      }
+
+      p {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+    }
+    p {
+      box-sizing: border-box;
+      color: #fff;
+      margin: 0;
+      position: absolute;
+      padding: 7px 10px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      transition: 0.3s;
+      width: calc(100% - 20px);
+    }
 
     img {
       background-position: center;
       background-size: cover;
+      filter: grayscale(100%) brightness(30%);
       width: 100%;
+      height: 150px;
+      transition: 0.4s;
     }
   }
 `;
