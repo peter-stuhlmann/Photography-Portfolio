@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Context } from '../../Context';
 import { UL } from '../styled-components/List';
 import { meta } from '../../helpers/meta';
+import { Heading } from '../styled-components/Heading';
 
 export default function NotFound() {
   const { text } = useContext(Context);
@@ -13,9 +14,10 @@ export default function NotFound() {
 
   return (
     <Fragment>
-      <h1>{text.notFound.heading}</h1>
+      <Heading h1 title={text.notFound.heading} />
+
       <div>
-        <h2>{text.notFound.list.heading}</h2>
+        <Heading h2 title={text.notFound.list.heading} />
         <UL>
           {text.notFound.list.links.map(link => (
             <li key={link.path}>

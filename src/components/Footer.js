@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Context } from '../Context';
 import styled from 'styled-components';
+
+import { Context } from '../Context';
+import { Heading } from './styled-components/Heading';
 
 export default function Footer() {
   const {
@@ -26,7 +28,7 @@ export default function Footer() {
     <StyledFooter>
       <div>
         <nav>
-          <h3>{text.footer.navigation.general.heading}</h3>
+          <Heading h3 title={text.footer.navigation.general.heading} />
           <span onClick={toggleTheming}>{themeModeButton}</span>
           {text.footer.navigation.general.list.map(link => (
             <Link key={link.path} to={link.path}>
@@ -35,7 +37,7 @@ export default function Footer() {
           ))}
         </nav>
         <nav>
-          <h3>{text.footer.navigation.legal.heading}</h3>
+          <Heading h3 title={text.footer.navigation.legal.heading} />
           {text.footer.navigation.legal.list.map(link => (
             <Link key={link.path} to={link.path}>
               {link.linkText}
@@ -44,7 +46,7 @@ export default function Footer() {
           <span onClick={toggleTracking}>{button}</span>
         </nav>
         <nav>
-          <h3>{text.footer.navigation.languages.heading}</h3>
+          <Heading h3 title={text.footer.navigation.languages.heading} />
           {text.footer.navigation.languages.list.map(link => (
             <Link key={link.path} to={link.path}>
               {link.linkText}
@@ -52,7 +54,7 @@ export default function Footer() {
           ))}
         </nav>
         <nav>
-          <h3>{text.footer.navigation.products.heading}</h3>
+          <Heading h3 title={text.footer.navigation.products.heading} />
           {text.footer.navigation.products.list.map(link => (
             <Link key={link.path} to={link.path}>
               {link.linkText}
@@ -60,7 +62,7 @@ export default function Footer() {
           ))}
         </nav>
         <nav>
-          <h3>{text.footer.navigation.links.heading}</h3>
+          <Heading h3 title={text.footer.navigation.links.heading} />
           {text.footer.navigation.links.list.map(link => (
             <a
               key={link.href}

@@ -2,6 +2,7 @@ import React, { Fragment, useContext } from 'react';
 
 import { Context } from '../../Context';
 import { meta } from '../../helpers/meta';
+import { Heading } from '../styled-components/Heading';
 
 export default function GeneralTerms() {
   const { legal } = useContext(Context);
@@ -11,7 +12,7 @@ export default function GeneralTerms() {
 
   return (
     <Fragment>
-      <h1>{legal.legalTerms.heading}</h1>
+      <Heading h1 title={legal.legalTerms.heading} />
 
       {legal.legalTerms.content.map(terms => (
         <Fragment key={terms.heading}>

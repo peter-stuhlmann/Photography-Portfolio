@@ -4,6 +4,7 @@ import { TwoColumns } from '../styled-components/Columns';
 import { Image } from '../styled-components/Image';
 import Testimonials from '../Testimonials';
 import { meta } from '../../helpers/meta';
+import { Heading } from '../styled-components/Heading';
 
 export default function About() {
   const { text } = useContext(Context);
@@ -13,7 +14,7 @@ export default function About() {
 
   return (
     <Fragment>
-      <h1>{text.about.heading}</h1>
+      <Heading h1 title={text.about.heading} />
 
       <TwoColumns columnLeft="0 0 48%" columnRight="0 0 48%">
         <div className="column-left">

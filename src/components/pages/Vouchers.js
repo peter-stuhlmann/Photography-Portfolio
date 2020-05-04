@@ -5,6 +5,7 @@ import { Image } from '../styled-components/Image';
 import { TwoColumns } from '../styled-components/Columns';
 import { ButtonLink } from '../styled-components/Buttons';
 import { meta } from '../../helpers/meta';
+import { Heading } from '../styled-components/Heading';
 
 export default function Vouchers() {
   const { text } = useContext(Context);
@@ -14,7 +15,7 @@ export default function Vouchers() {
 
   return (
     <Fragment>
-      <h1>{text.vouchers.heading}</h1>
+      <Heading h1 title={text.vouchers.heading} />
       <TwoColumns columnLeft="0 0 48%" columnRight="0 0 48%">
         <div className="column-left">
           {text.vouchers.content.map(text => (

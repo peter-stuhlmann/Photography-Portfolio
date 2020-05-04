@@ -1,17 +1,22 @@
 import React, { Fragment, useContext } from 'react';
-import { Link } from 'react-router-dom';
 
 import { Context } from '../../Context';
 import { Image } from '../styled-components/Image';
 import { TwoColumns } from '../styled-components/Columns';
 import { ButtonLink } from '../styled-components/Buttons';
+import { meta } from '../../helpers/meta';
+import { Heading } from '../styled-components/Heading';
 
 export default function Calendar() {
   const { text } = useContext(Context);
 
+  document.title = text.calendar.meta.title;
+  meta('name', 'description', text.calendar.meta.description);
+
   return (
     <Fragment>
-      <h1>{text.calendar.heading}</h1>
+      <Heading h1 title={text.calendar.heading} />
+
       <TwoColumns columnLeft="0 0 48%" columnRight="0 0 48%">
         <div className="column-left">
           {text.calendar.content.map(paragraph => (

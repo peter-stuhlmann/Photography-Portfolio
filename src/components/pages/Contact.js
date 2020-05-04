@@ -3,6 +3,7 @@ import React, { Fragment, useContext } from 'react';
 import { Context } from '../../Context';
 import { UL } from '../styled-components/List';
 import { meta } from '../../helpers/meta';
+import { Heading } from '../styled-components/Heading';
 
 export default function Contact() {
   const { text } = useContext(Context);
@@ -12,7 +13,8 @@ export default function Contact() {
 
   return (
     <Fragment>
-      <h1>{text.contact.heading}</h1>
+      <Heading h1 title={text.contact.heading} />
+
       <UL listStyleType="none" paddingX="0">
         {text.contact.data.map(data => (
           <li key={data}>{data}</li>

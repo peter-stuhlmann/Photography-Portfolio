@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Context } from '../../Context';
 import styled from 'styled-components';
 import { backgroundColor, textColor } from '../styled-components/Themes';
+import { Heading } from '../styled-components/Heading';
 
 function Navbar({ open }) {
   const {
@@ -25,9 +26,11 @@ function Navbar({ open }) {
   return (
     <StyledNavbar open={open}>
       {window.innerWidth < 1000 ? (
-        <h3 style={{ marginTop: '50px' }}>
-          {text.footer.navigation.general.heading}
-        </h3>
+        <Heading
+          h3
+          style={{ marginTop: '50px' }}
+          title={text.footer.navigation.general.heading}
+        />
       ) : null}
       {text.header.navigation.map(links => (
         <Link key={links.href} to={links.href}>
@@ -44,14 +47,14 @@ function Navbar({ open }) {
           ))}
           <span onClick={toggleTheming}>{themeModeButton}</span>
 
-          <h3>{text.footer.navigation.products.heading}</h3>
+          <Heading h3 title={text.footer.navigation.products.heading} />
           {text.footer.navigation.products.list.map(link => (
             <Link key={link.path} to={link.path}>
               {link.linkText}
             </Link>
           ))}
 
-          <h3>{text.footer.navigation.links.heading}</h3>
+          <Heading h3 title={text.footer.navigation.links.heading} />
           {text.footer.navigation.links.list.map(link => (
             <a
               key={link.href}
@@ -63,14 +66,14 @@ function Navbar({ open }) {
             </a>
           ))}
 
-          <h3>{text.footer.navigation.languages.heading}</h3>
+          <Heading h3 title={text.footer.navigation.languages.heading} />
           {text.footer.navigation.languages.list.map(link => (
             <Link key={link.path} to={link.path}>
               {link.linkText}
             </Link>
           ))}
 
-          <h3>{text.footer.navigation.legal.heading}</h3>
+          <Heading h3 title={text.footer.navigation.legal.heading} />
           {text.footer.navigation.legal.list.map(link => (
             <Link key={link.path} to={link.path}>
               {link.linkText}

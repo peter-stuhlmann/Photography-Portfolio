@@ -2,6 +2,7 @@ import React, { Fragment, useContext } from 'react';
 
 import { Context } from '../../Context';
 import { meta } from '../../helpers/meta';
+import { Heading } from '../styled-components/Heading';
 
 export default function LegalNotice() {
   const { text } = useContext(Context);
@@ -11,18 +12,18 @@ export default function LegalNotice() {
 
   return (
     <Fragment>
-      <h1>{text.legalNotice.heading}</h1>
-      <h2>{text.legalNotice.tmg.heading}</h2>
+      <Heading h1 title={text.legalNotice.heading} />
+      <Heading h2 title={text.legalNotice.tmg.heading} />
       <p
         dangerouslySetInnerHTML={{
           __html: text.legalNotice.tmg.text,
         }}
       />
-      <h2>{text.legalNotice.disclaimerContent.heading}</h2>
+      <Heading h2 title={text.legalNotice.disclaimerContent.heading} />
       <p>{text.legalNotice.disclaimerContent.text}</p>
-      <h2>{text.legalNotice.disclaimerLinks.heading}</h2>
+      <Heading h2 title={text.legalNotice.disclaimerLinks.heading} />
       <p>{text.legalNotice.disclaimerLinks.text}</p>
-      <h2>{text.legalNotice.copyright.heading}</h2>
+      <Heading h2 title={text.legalNotice.copyright.heading} />
       <p>{text.legalNotice.copyright.text}</p>
       <p>{text.legalNotice.source}</p>
     </Fragment>

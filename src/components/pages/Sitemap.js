@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Context } from '../../Context';
 import { UL } from '../styled-components/List';
 import { meta } from '../../helpers/meta';
+import { Heading } from '../styled-components/Heading';
 
 export default function Sitemap() {
   const { text } = useContext(Context);
@@ -13,7 +14,7 @@ export default function Sitemap() {
 
   return (
     <Fragment>
-      <h1>{text.sitemap.heading}</h1>
+      <Heading h1 title={text.sitemap.heading} />
       <UL>
         {text.sitemap.links.map(links => (
           <li key={links.href}>

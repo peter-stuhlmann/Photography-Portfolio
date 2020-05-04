@@ -2,13 +2,15 @@ import React, { Fragment, useContext } from 'react';
 import styled from 'styled-components';
 import LazyLoad from 'react-lazy-load';
 import { Context } from '../Context';
+import { Heading } from './styled-components/Heading';
 
 export default function Testimonials() {
   const { text } = useContext(Context);
 
   return (
     <Fragment>
-      <h1>{text.testimonials.heading}</h1>
+      <Heading h1 title={text.testimonials.heading} />
+
       {text.testimonials.cards.map(cards => (
         <TestimonialCard key={cards.img}>
           <div>

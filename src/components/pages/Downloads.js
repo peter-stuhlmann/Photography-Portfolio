@@ -6,6 +6,7 @@ import { TwoColumns } from '../styled-components/Columns';
 import { Image } from '../styled-components/Image';
 import { UL } from '../styled-components/List';
 import { meta } from '../../helpers/meta';
+import { Heading } from '../styled-components/Heading';
 
 export default function Downloads() {
   const { text } = useContext(Context);
@@ -15,7 +16,7 @@ export default function Downloads() {
 
   return (
     <Fragment>
-      <h1>{text.downloads.heading}</h1>
+      <Heading h1 title={text.downloads.heading} />
 
       <TwoColumns columnLeft="0 0 48%" columnRight="0 0 48%">
         <div className="column-left">
