@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { posts } from './data/BlogPosts';
 import { text } from './data/Text';
 import { legal } from './data/LegalTexts';
@@ -37,6 +37,8 @@ export default function ContextProvider({ children }) {
     themeMode === 'light' ? setThemeMode('dark') : setThemeMode('light');
   };
 
+  const [priceCategoryIndex, setPriceCategoryIndex] = useState(0);
+
   return (
     <Context.Provider
       value={{
@@ -52,6 +54,8 @@ export default function ContextProvider({ children }) {
         toggleTracking,
         toggleTheming,
         themeMode,
+        priceCategoryIndex,
+        setPriceCategoryIndex,
       }}
     >
       {children}
