@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { Fragment, useContext, useRef } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -18,26 +18,32 @@ export default function PriceCategories() {
     '#prints',
   ];
 
-  const images = useRef(null);
+  const desktop = useRef(null);
+  const mobile = useRef(null);
+
+  const scrollPosition = window.innerWidth < 1300 ? mobile : desktop;
 
   return (
-    <StyledCategories ref={images}>
-      {text.prices.categories.map((category, index) => (
-        <div
-          key={category.href}
-          onClick={() => {
-            setPriceCategoryIndex(index);
-            window.scrollTo(0, images.current.offsetTop);
-          }}
-          className={priceCategoryIndex === index ? 'selected' : null}
-        >
-          <Link to={categoryPath[index]}>
-            <img style={{ backgroundImage: `url(${category.img})` }} />
-            <p>{category.title}</p>
-          </Link>
-        </div>
-      ))}
-    </StyledCategories>
+    <Fragment>
+      <StyledCategories ref={desktop}>
+        {text.prices.categories.map((category, index) => (
+          <div
+            key={category.href}
+            onClick={() => {
+              setPriceCategoryIndex(index);
+              window.scrollTo(0, scrollPosition.current.offsetTop);
+            }}
+            className={priceCategoryIndex === index ? 'selected' : null}
+          >
+            <Link to={categoryPath[index]}>
+              <img style={{ backgroundImage: `url(${category.img})` }} />
+              <p>{category.title}</p>
+            </Link>
+          </div>
+        ))}
+      </StyledCategories>
+      <span ref={mobile} />
+    </Fragment>
   );
 }
 
@@ -62,6 +68,21 @@ const StyledCategories = styled.div`
       p {
         background-color: rgba(0, 0, 0, 0.8);
       }
+    }
+
+    @media (max-width: 1299px) {
+      flex: 0 0 31%;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 555px) {
+      flex: 0 0 49%;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 349px) {
+      flex: 0 0 100%;
+      margin-bottom: 20px;
     }
 
     p {
