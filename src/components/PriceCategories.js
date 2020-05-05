@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 import { Context } from '../Context';
 
 export default function PriceCategories() {
-  const { text, setPriceCategoryIndex } = useContext(Context);
+  const { text, priceCategoryIndex, setPriceCategoryIndex } = useContext(
+    Context
+  );
 
   const categoryPath = [
     '#portraits',
@@ -27,6 +29,7 @@ export default function PriceCategories() {
             setPriceCategoryIndex(index);
             window.scrollTo(0, images.current.offsetTop);
           }}
+          className={priceCategoryIndex === index ? 'selected' : null}
         >
           <Link to={categoryPath[index]}>
             <img style={{ backgroundImage: `url(${category.img})` }} />
@@ -51,16 +54,16 @@ const StyledCategories = styled.div`
     overflow: hidden;
     position: relative;
 
-    &:hover {
+    &:hover:not(.selected) {
       img {
         filter: grayscale(0%);
         transform: scale(1.05);
       }
-
       p {
         background-color: rgba(0, 0, 0, 0.8);
       }
     }
+
     p {
       box-sizing: border-box;
       color: #fff;
@@ -78,10 +81,23 @@ const StyledCategories = styled.div`
     img {
       background-position: center;
       background-size: cover;
+      box-sizing: border-box;
       filter: grayscale(100%) brightness(30%);
-      width: 100%;
       height: 150px;
       transition: 0.4s;
+      width: 100%;
+    }
+  }
+
+  .selected {
+    img {
+      transition: 0.4s;
+      transform: scale(1.05);
+      filter: grayscale(0) brightness(100%);
+    }
+
+    p {
+      display: none;
     }
   }
 `;
