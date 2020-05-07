@@ -18,16 +18,7 @@ export default function About() {
 
       <TwoColumns columnLeft="0 0 48%" columnRight="0 0 48%">
         <div className="column-left">
-          <blockquote>
-            <p>
-              <i>{text.about.quote.text}</i>
-            </p>
-            <p>
-              <i>{text.about.quote.author}</i>
-            </p>
-          </blockquote>
-
-          <div
+          <p
             dangerouslySetInnerHTML={{
               __html: text.about.text,
             }}
