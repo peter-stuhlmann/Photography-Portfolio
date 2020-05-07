@@ -18,12 +18,14 @@ export default function About() {
 
       <TwoColumns columnLeft="0 0 48%" columnRight="0 0 48%">
         <div className="column-left">
-          <p
-            dangerouslySetInnerHTML={{
-              __html: text.about.text,
-            }}
-            style={{ marginBottom: '25px' }}
-          />
+          {text.about.text.map(paragraph => (
+            <p
+              key={paragraph}
+              dangerouslySetInnerHTML={{
+                __html: paragraph,
+              }}
+            />
+          ))}
         </div>
         <div className="column-right">
           <Image
