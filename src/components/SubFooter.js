@@ -26,7 +26,11 @@ export default function SubFooter() {
         </p>
         <p>
           {text.subFooter.developer.title}
-          <a href={text.subFooter.developer.href}>
+          <a
+            href={text.subFooter.developer.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {text.subFooter.developer.name}
           </a>
           .
