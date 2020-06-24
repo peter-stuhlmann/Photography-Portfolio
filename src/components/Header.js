@@ -53,6 +53,7 @@ const StyledHeader = styled.header`
 
     p {
       color: ${textColor};
+      font-size: 16px;
       letter-spacing: 1.5px;
       margin: 0;
     }
