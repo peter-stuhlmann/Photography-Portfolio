@@ -9,7 +9,7 @@ const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 const Calendar = lazy(() => import('./pages/Calendar'));
 const Contact = lazy(() => import('./pages/Contact'));
-const Course = lazy(() => import('./pages/Course'));
+const Procedure = lazy(() => import('./pages/Procedure'));
 const Downloads = lazy(() => import('./pages/Downloads'));
 const Faq = lazy(() => import('./pages/Faq'));
 const GeneralTerms = lazy(() => import('./pages/GeneralTerms'));
@@ -30,7 +30,7 @@ export default function Router() {
       <Switch>
         <Route exact path="/" component={ga(PortfolioGallery)} />
         <Route exact path="/agb" component={ga(GeneralTerms)} />
-        <Route exact path="/ablauf" component={ga(Course)} />
+        <Route exact path="/ablauf" component={ga(Procedure)} />
         <Route exact path="/akt" component={ga(PortfolioGallery)} />
         <Route exact path="/api" component={ga(PhotoAPI)} />
         <Route exact path="/blog" component={ga(Blog)} />
