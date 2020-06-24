@@ -21,6 +21,7 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
+    transition: 0.3s;
 
     .external-inline-link,
     .internal-inline-link {
