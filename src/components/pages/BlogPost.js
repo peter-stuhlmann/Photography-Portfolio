@@ -1,9 +1,8 @@
-import React, { Fragment, useContext } from 'react';
-import { Context } from '../../Context';
+import React, { Fragment } from 'react';
 import NotFound from './NotFound';
+import posts from '../../data/BlogPosts';
 
 export default function BlogPost() {
-  const { posts } = useContext(Context);
   const slug = window.location.pathname.slice(6); // 6 = /blog/
   const post = posts.filter(post => post.slug === slug);
 

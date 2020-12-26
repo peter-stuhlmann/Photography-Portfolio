@@ -1,17 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-import { Context } from '../Context';
 import { UL } from './styled-components/List';
 
-export default function PriceList() {
-  const { text, priceCategoryIndex } = useContext(Context);
-
-  const section = text.prices.content[priceCategoryIndex];
+export default function PriceList(props) {
+  const { prices } = props;
 
   return (
     <UL paddingX="0">
-      {section.services?.map(service => (
+      {prices.services?.map(service => (
         <StyledPriceList key={service.heading}>
           <p className="service">
             <strong>{service.heading}</strong> {service.description}

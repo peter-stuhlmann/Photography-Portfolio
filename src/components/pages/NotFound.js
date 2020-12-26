@@ -1,25 +1,23 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Context } from '../../Context';
 import { UL } from '../styled-components/List';
 import { meta } from '../../helpers/meta';
 import { Heading } from '../styled-components/Heading';
+import notFound from '../../data/notFound';
 
 export default function NotFound() {
-  const { text } = useContext(Context);
-
-  document.title = text.notFound.meta.title;
-  meta('name', 'description', text.notFound.meta.description);
+  document.title = notFound.meta.title;
+  meta('name', 'description', notFound.meta.description);
 
   return (
     <Fragment>
-      <Heading h1 title={text.notFound.heading} />
+      <Heading h1 title={notFound.heading} />
 
       <div>
-        <Heading h2 title={text.notFound.list.heading} />
+        <Heading h2 title={notFound.list.heading} />
         <UL>
-          {text.notFound.list.links.map(link => (
+          {notFound.list.links.map(link => (
             <li key={link.path}>
               <Link title={link.linkText} to={link.path}>
                 {link.linkText}

@@ -1,27 +1,24 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { Context } from '../Context';
 import { TwoColumns } from './styled-components/Columns';
 import { Heading } from './styled-components/Heading';
 import PriceList from './PriceList';
 
-export default function PriceContent() {
-  const { text, priceCategoryIndex } = useContext(Context);
-
-  const section = text.prices.content[priceCategoryIndex];
+export default function PriceContent(props) {
+  const { prices } = props;
 
   return (
     <StyledPriceContent>
-      <Heading h2 title={section.heading} />
+      <Heading h2 title={prices.heading} />
 
       <TwoColumns
-        columnLeft={section.columns ? section.columns.left : '0 0 100%'}
-        columnRight={section.columns ? section.columns.right : '0 0 100%'}
+        columnLeft={prices.columns ? prices?.columns.left : '0 0 100%'}
+        columnRight={prices.columns ? prices?.columns.right : '0 0 100%'}
       >
         <div className="column-left">
-          {section.text.map(paragraph =>
+          {prices.text.map(paragraph =>
             paragraph.link ? (
               <p key={paragraph.paragraph}>
                 <span
@@ -50,7 +47,7 @@ export default function PriceContent() {
         </div>
 
         <div className="column-right">
-          <PriceList />
+          <PriceList prices={prices} />
         </div>
       </TwoColumns>
     </StyledPriceContent>

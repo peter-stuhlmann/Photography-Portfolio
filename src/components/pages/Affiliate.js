@@ -1,18 +1,16 @@
-import React, { Fragment, useContext } from 'react';
-import { Context } from '../../Context';
+import React, { Fragment } from 'react';
 import { meta } from '../../helpers/meta';
+import affiliate from '../../data/affiliate';
 
 export default function Affiliate() {
-  const { text } = useContext(Context);
-
-  document.title = text.affiliate.meta.title;
-  meta('name', 'description', text.affiliate.meta.description);
+  document.title = affiliate.meta.title;
+  meta('name', 'description', affiliate.meta.description);
 
   return (
     <Fragment>
-      <h1>{text.affiliate.heading}</h1>
+      <h1>{affiliate.heading}</h1>
 
-      {text.affiliate.text.map(paragraph => (
+      {affiliate.text.map(paragraph => (
         <Fragment key={paragraph}>{paragraph}</Fragment>
       ))}
     </Fragment>

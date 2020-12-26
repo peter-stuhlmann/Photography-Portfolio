@@ -1,18 +1,16 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment } from 'react';
 
-import { Context } from '../../Context';
 import { meta } from '../../helpers/meta';
 import { Heading } from '../styled-components/Heading';
+import privacyPolicy from '../../data/privacyPolicy.js';
 
 export default function PrivacyPolicy() {
-  const { legal } = useContext(Context);
-
-  document.title = legal.privacyPolicy.meta.title;
-  meta('name', 'description', legal.privacyPolicy.meta.description);
+  document.title = privacyPolicy.meta.title;
+  meta('name', 'description', privacyPolicy.meta.description);
 
   return (
     <Fragment>
-      <Heading h1 title={legal.privacyPolicy.heading} />
+      <Heading h1 title={privacyPolicy.heading} />
     </Fragment>
   );
 }

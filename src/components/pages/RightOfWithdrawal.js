@@ -1,27 +1,25 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
-import { Context } from '../../Context';
 import { TwoColumns } from '../styled-components/Columns';
 import { UL } from '../styled-components/List';
 import { textColor } from '../styled-components/Themes';
 import { ButtonLink } from '../styled-components/Buttons';
 import { meta } from '../../helpers/meta';
 import { Heading } from '../styled-components/Heading';
+import rightOfWithdrawal from '../../data/rightOfWithdrawal';
 
 export default function RightOfWithdrawal() {
-  const { legal } = useContext(Context);
-
-  document.title = legal.rightOfWithdrawal.meta.title;
-  meta('name', 'description', legal.rightOfWithdrawal.meta.description);
+  document.title = rightOfWithdrawal.meta.title;
+  meta('name', 'description', rightOfWithdrawal.meta.description);
 
   return (
     <Fragment>
-      <Heading h1 title={legal.rightOfWithdrawal.heading} />
+      <Heading h1 title={rightOfWithdrawal.heading} />
 
       <TwoColumns columnLeft="0 0 48%" columnRight="0 0 48%">
         <div className="column-left">
-          {legal.rightOfWithdrawal.content.map(paragraph => (
+          {rightOfWithdrawal.content.map(paragraph => (
             <Fragment key={paragraph.heading}>
               <Heading h2 title={paragraph.heading} />
               {paragraph.text.map(text => (
@@ -32,19 +30,19 @@ export default function RightOfWithdrawal() {
         </div>
         <div className="column-right">
           <Box>
-            <Heading h2 title={legal.rightOfWithdrawal.model.heading} />
-            <i>{legal.rightOfWithdrawal.model.description}</i>
+            <Heading h2 title={rightOfWithdrawal.model.heading} />
+            <i>{rightOfWithdrawal.model.description}</i>
             <UL>
-              {legal.rightOfWithdrawal.model.list.map(item => (
+              {rightOfWithdrawal.model.list.map(item => (
                 <li key={item}>{item}</li>
               ))}
             </UL>
-            <i>{legal.rightOfWithdrawal.model.footnote}</i>
+            <i>{rightOfWithdrawal.model.footnote}</i>
           </Box>
           <ButtonLink
             pdf
-            href={legal.rightOfWithdrawal.model.pdf.href}
-            linkText={legal.rightOfWithdrawal.model.pdf.linkText}
+            href={rightOfWithdrawal.model.pdf.href}
+            linkText={rightOfWithdrawal.model.pdf.linkText}
           />
         </div>
       </TwoColumns>

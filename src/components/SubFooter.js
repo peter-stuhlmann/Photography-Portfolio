@@ -1,17 +1,17 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Context } from '../Context';
 import styled from 'styled-components';
 
-export default function SubFooter() {
-  const { text } = useContext(Context);
+import subFooter from '../data/subFooter';
+import consoleLog from '../data/console';
 
+export default function SubFooter() {
   const currentYear = new Date().getFullYear();
 
   console.log(
-    `%c\n${text.console.heading}\n` +
-      `%c${text.console.text}\n` +
-      `%c${text.console.link}\n`,
+    `%c\n${consoleLog.heading}\n` +
+      `%c${consoleLog.text}\n` +
+      `%c${consoleLog.link}\n`,
     'color: #282828; font-size: 23px',
     'color: #282828; font-size: 14px',
     'font-size: 14px'
@@ -21,17 +21,17 @@ export default function SubFooter() {
     <StyledSubFooter>
       <div>
         <p>
-          <Link to="/">&copy; {text.subFooter.copyright}</Link>, 2016-
+          <Link to="/">&copy; {subFooter.copyright}</Link>, 2016-
           {currentYear}
         </p>
         <p>
-          {text.subFooter.developer.title}
+          {subFooter.developer.title}
           <a
-            href={text.subFooter.developer.href}
+            href={subFooter.developer.href}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {text.subFooter.developer.name}
+            {subFooter.developer.name}
           </a>
           .
         </p>

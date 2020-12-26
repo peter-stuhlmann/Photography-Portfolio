@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Context } from '../../Context';
 import ToggleButton from './ToggleButton';
 import Navbar from './Navbar';
 import { textColor, backgroundColor } from '../styled-components/Themes';
@@ -21,8 +20,8 @@ const useOnClickOutside = (ref, handler) => {
   }, [ref, handler]);
 };
 
-export default function MainNavigation() {
-  const { text } = useContext(Context);
+export default function MainNavigation(props) {
+  const { header, toggleTracking, tracking, toggleTheming, themeMode } = props;
 
   const [open, setOpen] = useState(false);
 
@@ -31,10 +30,18 @@ export default function MainNavigation() {
 
   return (
     <StyledMainNavigation ref={node}>
-      <ToggleButton open={open} setOpen={setOpen} />
-      <Navbar open={open} setOpen={setOpen} />
+      <ToggleButton open={open} setOpen={setOpen} header={header} />
+      <Navbar
+        open={open}
+        setOpen={setOpen}
+        header={header}
+        toggleTracking={toggleTracking}
+        tracking={tracking}
+        toggleTheming={toggleTheming}
+        themeMode={themeMode}
+      />
       <div className="site-title-mobile">
-        <Link to="/">{text.header.siteTitle}</Link>
+        <Link to="/">{header.siteTitle}</Link>
       </div>
     </StyledMainNavigation>
   );

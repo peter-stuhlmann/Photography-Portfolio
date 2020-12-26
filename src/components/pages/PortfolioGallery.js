@@ -1,40 +1,37 @@
-import React, {
-  Fragment,
-  useContext,
-  useEffect,
-  useState,
-  useCallback,
-} from 'react';
+import React, { Fragment, useEffect, useState, useCallback } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Gallery from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 
-import { Context } from '../../Context';
 import { debounce } from '../../helpers/debounce';
-import { text } from '../../data/Text';
 import { meta } from '../../helpers/meta';
 
-export default function PortfolioGallery() {
-  const { portraits, landscapes, nudes } = useContext(Context);
+import loading from '../../data/loading';
 
+import portraitsPage from '../../data/portraits';
+import landscapesPage from '../../data/landscapes';
+import nudesPage from '../../data/nudes';
+import { portraits, landscapes, nudes } from '../../data/Photos';
+
+export default function PortfolioGallery() {
   const route = window.location.pathname;
   let photos;
 
   switch (route) {
     case '/':
       photos = portraits;
-      document.title = text.portraits.meta.title;
-      meta('name', 'description', text.portraits.meta.description);
+      document.title = portraitsPage.meta.title;
+      meta('name', 'description', portraitsPage.meta.description);
       break;
     case '/landschaftsfotografie':
       photos = landscapes;
-      document.title = text.landscapes.meta.title;
-      meta('name', 'description', text.landscapes.meta.description);
+      document.title = landscapesPage.meta.title;
+      meta('name', 'description', landscapesPage.meta.description);
       break;
     case '/akt':
       photos = nudes;
-      document.title = text.nudes.meta.title;
-      meta('name', 'description', text.nudes.meta.description);
+      document.title = nudesPage.meta.title;
+      meta('name', 'description', nudesPage.meta.description);
       break;
     default:
       photos = null;
@@ -90,7 +87,7 @@ export default function PortfolioGallery() {
           </Modal>
         ) : null}
       </ModalGateway>
-      {!loadedAll && <div ref={ref}>{text.gallery.loading}</div>}
+      {!loadedAll && <div ref={ref}>{loading.images}</div>}
     </Fragment>
   );
 }

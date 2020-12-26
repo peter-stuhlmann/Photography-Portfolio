@@ -1,18 +1,18 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment } from 'react';
 import LazyLoad from 'react-lazy-load';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { Context } from '../../Context';
 import { cardBackground, textColor } from '../styled-components/Themes';
 import { meta } from '../../helpers/meta';
 import { Heading } from '../styled-components/Heading';
 
-export default function Blog() {
-  const { posts, text } = useContext(Context);
+import blog from '../../data/blog';
+import posts from '../../data/BlogPosts';
 
-  document.title = text.blog.meta.title;
-  meta('name', 'description', text.blog.meta.description);
+export default function Blog() {
+  document.title = blog.meta.title;
+  meta('name', 'description', blog.meta.description);
 
   // calculate the height of a blog post card (1/3 of the width)
   let cardHeight;
@@ -33,7 +33,7 @@ export default function Blog() {
 
   return (
     <Fragment>
-      <Heading h1 title={text.blog.heading} />
+      <Heading h1 title={blog.heading} />
 
       <StyledBlog>
         {posts.map(post => (
@@ -56,7 +56,7 @@ export default function Blog() {
               </div>
               <p>{post.excerpt}</p>
               <button type="button">
-                <Link to={`blog/${post.slug}`}>{text.blog.readMore}</Link>
+                <Link to={`blog/${post.slug}`}>{blog.readMore}</Link>
               </button>
             </div>
           </li>

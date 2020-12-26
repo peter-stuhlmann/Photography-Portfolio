@@ -1,28 +1,26 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment } from 'react';
 
-import { Context } from '../../Context';
 import { Image } from '../styled-components/Image';
 import { TwoColumns } from '../styled-components/Columns';
 import { ButtonLink } from '../styled-components/Buttons';
 import { meta } from '../../helpers/meta';
 import { Heading } from '../styled-components/Heading';
+import calendar from '../../data/calendar';
 
 export default function Calendar() {
-  const { text } = useContext(Context);
-
-  document.title = text.calendar.meta.title;
-  meta('name', 'description', text.calendar.meta.description);
+  document.title = calendar.meta.title;
+  meta('name', 'description', calendar.meta.description);
 
   return (
     <Fragment>
-      <Heading h1 title={text.calendar.heading} />
+      <Heading h1 title={calendar.heading} />
 
       <TwoColumns columnLeft="0 0 48%" columnRight="0 0 48%">
         <div className="column-left">
-          {text.calendar.content.map(paragraph => (
+          {calendar.content.map(paragraph => (
             <p key={paragraph}>{paragraph}</p>
           ))}
-          {text.calendar.links.map(link => (
+          {calendar.links.map(link => (
             <ButtonLink
               key={link.href}
               href={link.href}
@@ -33,8 +31,8 @@ export default function Calendar() {
         </div>
         <div className="column-right">
           <Image
-            src={text.calendar.image.src}
-            alt={text.calendar.image.alt}
+            src={calendar.image.src}
+            alt={calendar.image.alt}
             style={{ marginTop: '1em' }}
           />
         </div>

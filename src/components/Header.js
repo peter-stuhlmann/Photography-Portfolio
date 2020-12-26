@@ -1,20 +1,26 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Context } from '../Context';
 import styled from 'styled-components';
 import MainNavigation from './MainNavigation/MainNavigation';
 import { backgroundColor, textColor } from './styled-components/Themes';
+import header from '../data/header';
 
-export default function Header() {
-  const { text } = useContext(Context);
+export default function Header(props) {
+  const { toggleTracking, tracking, toggleTheming, themeMode } = props;
 
   return (
     <StyledHeader>
       <div className="site-title">
-        <Link to="/">{text.header.siteTitle}</Link>
-        <p>{text.header.siteDescription}</p>
+        <Link to="/">{header.siteTitle}</Link>
+        <p>{header.siteDescription}</p>
       </div>
-      <MainNavigation />
+      <MainNavigation
+        header={header}
+        toggleTracking={toggleTracking}
+        tracking={tracking}
+        toggleTheming={toggleTheming}
+        themeMode={themeMode}
+      />
     </StyledHeader>
   );
 }

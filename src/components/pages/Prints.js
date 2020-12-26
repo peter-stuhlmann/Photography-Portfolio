@@ -1,18 +1,17 @@
-import React, { Fragment, useContext } from 'react';
-import { Context } from '../../Context';
+import React, { Fragment } from 'react';
+
 import { meta } from '../../helpers/meta';
+import prints from '../../data/prints';
 
 export default function Prints() {
-  const { text } = useContext(Context);
-
-  document.title = text.prints.meta.title;
-  meta('name', 'description', text.prints.meta.description);
+  document.title = prints.meta.title;
+  meta('name', 'description', prints.meta.description);
 
   return (
     <Fragment>
-      <h1>{text.prints.heading}</h1>
+      <h1>{prints.heading}</h1>
 
-      {text.prints.text.map(paragraph => (
+      {prints.text.map(paragraph => (
         <Fragment key={paragraph}>{paragraph}</Fragment>
       ))}
     </Fragment>

@@ -1,36 +1,34 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment } from 'react';
 
-import { Context } from '../../Context';
 import { Image } from '../styled-components/Image';
 import { TwoColumns } from '../styled-components/Columns';
 import { ButtonLink } from '../styled-components/Buttons';
 import { meta } from '../../helpers/meta';
 import { Heading } from '../styled-components/Heading';
+import vouchers from '../../data/vouchers';
 
 export default function Vouchers() {
-  const { text } = useContext(Context);
-
-  document.title = text.vouchers.meta.title;
-  meta('name', 'description', text.vouchers.meta.description);
+  document.title = vouchers.meta.title;
+  meta('name', 'description', vouchers.meta.description);
 
   return (
     <Fragment>
-      <Heading h1 title={text.vouchers.heading} />
+      <Heading h1 title={vouchers.heading} />
       <TwoColumns columnLeft="0 0 48%" columnRight="0 0 48%">
         <div className="column-left">
-          {text.vouchers.content.map(text => (
+          {vouchers.content.map(text => (
             <p key={text}>{text}</p>
           ))}
           <ButtonLink
-            title={text.vouchers.link.title}
-            href={text.vouchers.link.href}
-            linkText={text.vouchers.link.linkText}
+            title={vouchers.link.title}
+            href={vouchers.link.href}
+            linkText={vouchers.link.linkText}
           />
         </div>
         <div className="column-right">
           <Image
-            src={text.vouchers.image.src}
-            alt={text.vouchers.image.alt}
+            src={vouchers.image.src}
+            alt={vouchers.image.alt}
             style={{ marginTop: '1em' }}
           />
         </div>

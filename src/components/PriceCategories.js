@@ -1,13 +1,9 @@
-import React, { Fragment, useContext, useRef } from 'react';
+import React, { Fragment, useRef } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { Context } from '../Context';
-
-export default function PriceCategories() {
-  const { text, priceCategoryIndex, setPriceCategoryIndex } = useContext(
-    Context
-  );
+export default function PriceCategories(props) {
+  const { prices, priceCategoryIndex, setPriceCategoryIndex } = props;
 
   const categoryPath = [
     '#portraits',
@@ -26,7 +22,7 @@ export default function PriceCategories() {
   return (
     <Fragment>
       <StyledCategories ref={desktop}>
-        {text.prices.categories.map((category, index) => (
+        {prices.categories.map((category, index) => (
           <div
             key={category.href}
             onClick={() => {

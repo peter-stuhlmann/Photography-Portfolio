@@ -1,18 +1,19 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { Context } from '../../Context';
 import styled from 'styled-components';
 import { backgroundColor, textColor } from '../styled-components/Themes';
 import { Heading } from '../styled-components/Heading';
+import footer from '../../data/footer';
 
-function Navbar({ open }) {
+function Navbar(props) {
   const {
-    text,
+    open,
+    header,
     toggleTracking,
     tracking,
     toggleTheming,
     themeMode,
-  } = useContext(Context);
+  } = props;
 
   let button;
   tracking === false
@@ -29,10 +30,10 @@ function Navbar({ open }) {
         <Heading
           h3
           style={{ marginTop: '50px' }}
-          title={text.footer.navigation.general.heading}
+          title={footer.navigation.general.heading}
         />
       ) : null}
-      {text.header.navigation.map(links => (
+      {header.navigation.map(links => (
         <Link key={links.href} to={links.href}>
           {links.linkText}
         </Link>
@@ -40,22 +41,22 @@ function Navbar({ open }) {
 
       {window.innerWidth < 1000 ? (
         <Fragment>
-          {text.footer.navigation.general.list.map(link => (
+          {footer.navigation.general.list.map(link => (
             <Link key={link.path} to={link.path}>
               {link.linkText}
             </Link>
           ))}
           <span onClick={toggleTheming}>{themeModeButton}</span>
 
-          <Heading h3 title={text.footer.navigation.products.heading} />
-          {text.footer.navigation.products.list.map(link => (
+          <Heading h3 title={footer.navigation.products.heading} />
+          {footer.navigation.products.list.map(link => (
             <Link key={link.path} to={link.path}>
               {link.linkText}
             </Link>
           ))}
 
-          <Heading h3 title={text.footer.navigation.links.heading} />
-          {text.footer.navigation.links.list.map(link => (
+          <Heading h3 title={footer.navigation.links.heading} />
+          {footer.navigation.links.list.map(link => (
             <a
               key={link.href}
               target="_blank"
@@ -66,15 +67,15 @@ function Navbar({ open }) {
             </a>
           ))}
 
-          <Heading h3 title={text.footer.navigation.languages.heading} />
-          {text.footer.navigation.languages.list.map(link => (
+          <Heading h3 title={footer.navigation.languages.heading} />
+          {footer.navigation.languages.list.map(link => (
             <Link key={link.path} to={link.path}>
               {link.linkText}
             </Link>
           ))}
 
-          <Heading h3 title={text.footer.navigation.legal.heading} />
-          {text.footer.navigation.legal.list.map(link => (
+          <Heading h3 title={footer.navigation.legal.heading} />
+          {footer.navigation.legal.list.map(link => (
             <Link key={link.path} to={link.path}>
               {link.linkText}
             </Link>

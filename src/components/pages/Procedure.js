@@ -1,18 +1,17 @@
-import React, { Fragment, useContext } from 'react';
-import { Context } from '../../Context';
+import React, { Fragment } from 'react';
+
 import { meta } from '../../helpers/meta';
+import procedure from '../../data/procedure';
 
 export default function Procedure() {
-  const { text } = useContext(Context);
-
-  document.title = text.procedure.meta.title;
-  meta('name', 'description', text.procedure.meta.description);
+  document.title = procedure.meta.title;
+  meta('name', 'description', procedure.meta.description);
 
   return (
     <Fragment>
-      <h1>{text.procedure.heading}</h1>
+      <h1>{procedure.heading}</h1>
 
-      {text.procedure.text.map(paragraph => (
+      {procedure.text.map(paragraph => (
         <Fragment key={paragraph}>{paragraph}</Fragment>
       ))}
     </Fragment>

@@ -1,21 +1,32 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import CookieConsent from 'react-cookie-consent';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Context } from '../Context';
 
-export default function CookieConsentBanner() {
-  const { legal, optInTracking, optOutTracking } = useContext(Context);
+import cookieConsent from '../data/cookieConsent';
+import { trackingCode } from '../helpers/analytics';
+
+export default function CookieConsentBanner(props) {
+  const { tracking, optInTracking, optOutTracking } = props;
+
+  console.log(tracking);
+  if (tracking === false) {
+    document.cookie = `Disable ${trackingCode}=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
+    window[`ga-disable-${trackingCode}`] = true;
+  } else {
+    document.cookie = `Disable ${trackingCode}=false; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
+    window[`ga-disable-${trackingCode}`] = false;
+  }
 
   return (
     <CookieConsent
       location="top"
-      buttonText={legal.cookieConsent.accept}
+      buttonText={cookieConsent.accept}
       onAccept={() => {
         optInTracking();
       }}
       enableDeclineButton
-      declineButtonText={legal.cookieConsent.decline}
+      declineButtonText={cookieConsent.decline}
       onDecline={() => {
         optOutTracking();
       }}
@@ -35,9 +46,9 @@ export default function CookieConsentBanner() {
       }}
       expires={90}
     >
-      {legal.cookieConsent.message}
-      <StyledLink to={legal.cookieConsent.link.href}>
-        {legal.cookieConsent.link.text}
+      {cookieConsent.message}
+      <StyledLink to={cookieConsent.link.href}>
+        {cookieConsent.link.text}
       </StyledLink>
     </CookieConsent>
   );
