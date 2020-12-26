@@ -1,13 +1,10 @@
 import React, { Fragment, useContext } from 'react';
-import { Link } from 'react-router-dom';
 
 import { Context } from '../../Context';
 import { meta } from '../../helpers/meta';
-import { TwoColumns } from '../styled-components/Columns';
 import { Heading } from '../styled-components/Heading';
 import PriceCategories from '../PriceCategories';
 import PricesIntro from '../PricesIntro';
-import PriceList from '../PriceList';
 import PriceContent from '../PriceContent';
 import { ShareButtons } from '../Sharing';
 

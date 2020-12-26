@@ -1,5 +1,4 @@
 import React, { Fragment, useContext } from 'react';
-import styled from 'styled-components';
 
 import { Context } from '../../Context';
 import { TwoColumns } from '../styled-components/Columns';

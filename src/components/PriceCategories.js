@@ -36,7 +36,10 @@ export default function PriceCategories() {
             className={priceCategoryIndex === index ? 'selected' : null}
           >
             <Link to={categoryPath[index]}>
-              <img style={{ backgroundImage: `url(${category.img})` }} />
+              <div
+                className="img"
+                style={{ backgroundImage: `url(${category.img})` }}
+              />
               <p>{category.title}</p>
             </Link>
           </div>
@@ -61,7 +64,7 @@ const StyledCategories = styled.div`
     position: relative;
 
     &:hover:not(.selected) {
-      img {
+      .img {
         filter: grayscale(0%);
         transform: scale(1.05);
       }
@@ -99,7 +102,7 @@ const StyledCategories = styled.div`
       width: calc(100% - 20px);
     }
 
-    img {
+    .img {
       background-position: center;
       background-size: cover;
       box-sizing: border-box;
@@ -111,7 +114,7 @@ const StyledCategories = styled.div`
   }
 
   .selected {
-    img {
+    .img {
       transition: 0.4s;
       transform: scale(1.05);
       filter: grayscale(0) brightness(100%);
