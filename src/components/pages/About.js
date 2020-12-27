@@ -17,7 +17,7 @@ export default function About() {
 
       <TwoColumns columnLeft="0 0 48%" columnRight="0 0 48%">
         <div className="column-left">
-          {about.map(paragraph => (
+          {about.text.map(paragraph => (
             <p
               key={paragraph}
               dangerouslySetInnerHTML={{
