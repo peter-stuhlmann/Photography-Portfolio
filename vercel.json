@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "photography-portfolio",
   "builds": [
     {
       "src": "package.json",
@@ -11,32 +10,32 @@
   "routes": [
     {
       "src": "/static/(.*)",
-      "headers": { "cache-control": "s-maxage=31536000,immutable" },
+      "headers": { "cache-control": "max-age=31536000" },
       "dest": "/static/$1"
     },
     {
       "src": "/images/(.*)",
-      "headers": { "cache-control": "s-maxage=604800,immutable" },
+      "headers": { "cache-control": "max-age=31536000" },
       "dest": "/images/$1"
     },
     {
       "src": "/dokumente/(.*)",
-      "headers": { "cache-control": "s-maxage=604800,immutable" },
+      "headers": { "cache-control": "max-age=604800" },
       "dest": "/dokumente/$1"
     },
     {
       "src": "/portfolio/(.*)",
-      "headers": { "cache-control": "s-maxage=604800,immutable" },
+      "headers": { "cache-control": "max-age=604800" },
       "dest": "/portfolio/$1"
     },
     {
       "src": "/testimonials/(.*)",
-      "headers": { "cache-control": "s-maxage=604800,immutable" },
+      "headers": { "cache-control": "max-age=604800" },
       "dest": "/testimonials/$1"
     },
     {
       "src": "/(.*)",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": { "cache-control": "max-age=0" },
       "dest": "/index.html"
     }
   ]

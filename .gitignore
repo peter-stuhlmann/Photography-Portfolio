@@ -22,4 +22,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # deployment
-.now
+.vercel
