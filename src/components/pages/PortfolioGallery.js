@@ -48,12 +48,12 @@ export default function PortfolioGallery() {
     setViewerIsOpen(false);
   };
 
-  const [amount, setAmount] = useState(1);
+  const [amount, setAmount] = useState(6);
 
   const [ref, inView] = useInView();
 
   const loadMorePhotos = () => {
-    setAmount(amount + 2);
+    setAmount(amount + 6);
   };
 
   useEffect(() => {
