@@ -21,7 +21,7 @@ const useOnClickOutside = (ref, handler) => {
 };
 
 export default function MainNavigation(props) {
-  const { header, toggleTracking, tracking, toggleTheming, themeMode } = props;
+  const { header, tracking, setTracking, themeMode, setThemeMode } = props;
 
   const [open, setOpen] = useState(false);
 
@@ -35,10 +35,10 @@ export default function MainNavigation(props) {
         open={open}
         setOpen={setOpen}
         header={header}
-        toggleTracking={toggleTracking}
         tracking={tracking}
-        toggleTheming={toggleTheming}
+        setTracking={setTracking}
         themeMode={themeMode}
+        setThemeMode={setThemeMode}
       />
       <div className="site-title-mobile">
         <Link to="/">{header.siteTitle}</Link>

@@ -16,18 +16,11 @@ export default function App() {
 
   const [tracking, setTracking] = useLocalStorage('Tracking', false);
 
-  const toggleTracking = () => {
-    setTracking(!tracking);
-  };
-  const optInTracking = () => {
+  const optInCookie = () => {
     setTracking(true);
   };
-  const optOutTracking = () => {
+  const optOutCookie = () => {
     setTracking(false);
-  };
-
-  const toggleTheming = () => {
-    themeMode === 'light' ? setThemeMode('dark') : setThemeMode('light');
   };
 
   return (
@@ -37,21 +30,19 @@ export default function App() {
         <GlobalStyles />
         <CookieConsentBanner
           tracking={tracking}
-          toggleTracking={toggleTracking}
-          optInTracking={optInTracking}
-          optOutTracking={optOutTracking}
+          optInCookie={optInCookie}
+          optOutCookie={optOutCookie}
         />
         <Header
-          toggleTracking={toggleTracking}
           tracking={tracking}
-          toggleTheming={toggleTheming}
+          setTracking={setTracking}
           themeMode={themeMode}
+          setThemeMode={setThemeMode}
         />
         <Wrapper>
           <Router />
         </Wrapper>
         <Footer
-          toggleTheming={toggleTheming}
           themeMode={themeMode}
           setThemeMode={setThemeMode}
           tracking={tracking}

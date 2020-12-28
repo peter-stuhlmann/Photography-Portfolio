@@ -7,9 +7,8 @@ import cookieConsent from '../data/cookieConsent';
 import { trackingCode } from '../helpers/analytics';
 
 export default function CookieConsentBanner(props) {
-  const { tracking, optInTracking, optOutTracking } = props;
+  const { tracking, optInCookie, optOutCookie } = props;
 
-  console.log(tracking);
   if (tracking === false) {
     document.cookie = `Disable ${trackingCode}=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
     window[`ga-disable-${trackingCode}`] = true;
@@ -23,12 +22,12 @@ export default function CookieConsentBanner(props) {
       location="top"
       buttonText={cookieConsent.accept}
       onAccept={() => {
-        optInTracking();
+        optInCookie();
       }}
       enableDeclineButton
       declineButtonText={cookieConsent.decline}
       onDecline={() => {
-        optOutTracking();
+        optOutCookie();
       }}
       cookieName="cookie-consent"
       style={{ background: '#2B373B' }}

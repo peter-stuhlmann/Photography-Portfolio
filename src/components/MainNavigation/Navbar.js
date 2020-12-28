@@ -9,10 +9,10 @@ function Navbar(props) {
   const {
     open,
     header,
-    toggleTracking,
     tracking,
-    toggleTheming,
+    setTracking,
     themeMode,
+    setThemeMode,
   } = props;
 
   let button;
@@ -46,7 +46,13 @@ function Navbar(props) {
               {link.linkText}
             </Link>
           ))}
-          <span onClick={toggleTheming}>{themeModeButton}</span>
+          <span
+            onClick={() =>
+              setThemeMode(themeMode === 'light' ? 'dark' : 'light')
+            }
+          >
+            {themeModeButton}
+          </span>
 
           <Heading h3 title={footer.navigation.products.heading} />
           {footer.navigation.products.list.map(link => (
@@ -80,7 +86,7 @@ function Navbar(props) {
               {link.linkText}
             </Link>
           ))}
-          <span onClick={toggleTracking}>{button}</span>
+          <span onClick={() => setTracking(!tracking)}>{button}</span>
         </Fragment>
       ) : null}
     </StyledNavbar>

@@ -6,7 +6,7 @@ import { backgroundColor, textColor } from './styled-components/Themes';
 import header from '../data/header';
 
 export default function Header(props) {
-  const { toggleTracking, tracking, toggleTheming, themeMode } = props;
+  const { setTracking, tracking, themeMode, setThemeMode } = props;
 
   return (
     <StyledHeader>
@@ -16,10 +16,10 @@ export default function Header(props) {
       </div>
       <MainNavigation
         header={header}
-        toggleTracking={toggleTracking}
+        setTracking={setTracking}
         tracking={tracking}
-        toggleTheming={toggleTheming}
         themeMode={themeMode}
+        setThemeMode={setThemeMode}
       />
     </StyledHeader>
   );

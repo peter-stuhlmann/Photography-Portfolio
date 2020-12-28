@@ -6,7 +6,7 @@ import { Heading } from './styled-components/Heading';
 import footer from '../data/footer';
 
 export default function Footer(props) {
-  const { toggleTheming, themeMode, tracking, toggleTracking } = props;
+  const { themeMode, setThemeMode, tracking, setTracking } = props;
 
   let button;
   tracking === false
@@ -23,7 +23,13 @@ export default function Footer(props) {
       <div>
         <nav>
           <Heading h3 title={footer.navigation.general.heading} />
-          <span onClick={toggleTheming}>{themeModeButton}</span>
+          <span
+            onClick={() =>
+              setThemeMode(themeMode === 'light' ? 'dark' : 'light')
+            }
+          >
+            {themeModeButton}
+          </span>
           {footer.navigation.general.list.map(link => (
             <Link key={link.path} to={link.path}>
               {link.linkText}
@@ -37,7 +43,7 @@ export default function Footer(props) {
               {link.linkText}
             </Link>
           ))}
-          <span onClick={toggleTracking}>{button}</span>
+          <span onClick={() => setTracking(!tracking)}>{button}</span>
         </nav>
         <nav>
           <Heading h3 title={footer.navigation.languages.heading} />
