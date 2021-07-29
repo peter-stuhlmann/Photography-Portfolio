@@ -2,7 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import MainNavigation from './MainNavigation/MainNavigation';
-import { backgroundColor, textColor } from './styled-components/Themes';
+import {
+  headerBackgroundColor,
+  textColor,
+  headerBoxShadow,
+} from './styled-components/Themes';
 import header from '../data/header';
 
 export default function Header(props) {
@@ -27,13 +31,14 @@ export default function Header(props) {
 
 const StyledHeader = styled.header`
   text-transform: uppercase;
+  background-color: ${headerBackgroundColor};
+  box-shadow: ${headerBoxShadow};
 
   @media (min-width: 1000px) {
     padding: 50px 20px 20px 20px;
   }
 
   @media (min-width: 1650px) {
-    background-color: ${backgroundColor};
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;

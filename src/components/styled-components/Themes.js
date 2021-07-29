@@ -5,6 +5,16 @@ export const backgroundColor = theme('mode', {
   dark: '#282828',
 });
 
+export const headerBackgroundColor = theme('mode', {
+  light: '#fff',
+  dark: '#1c1c1c',
+});
+
+export const headerBoxShadow = theme('mode', {
+  light: 'none',
+  dark: '0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)',
+});
+
 export const textColor = theme('mode', {
   light: '#000',
   dark: '#fff',

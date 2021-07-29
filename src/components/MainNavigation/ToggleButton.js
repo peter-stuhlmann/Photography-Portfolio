@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { backgroundColor, textColor } from '../styled-components/Themes';
+import { headerBackgroundColor, textColor } from '../styled-components/Themes';
 
 export default function ToggleButton(props) {
   const { open, setOpen, header } = props;
@@ -20,7 +20,7 @@ export default function ToggleButton(props) {
 }
 
 const StyledToggleButton = styled.button`
-  background-color: ${backgroundColor};
+  background-color: ${headerBackgroundColor};
   border: none;
   cursor: pointer;
   display: flex;

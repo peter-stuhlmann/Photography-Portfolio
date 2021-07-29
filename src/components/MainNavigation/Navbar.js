@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { backgroundColor, textColor } from '../styled-components/Themes';
+import { headerBackgroundColor, textColor } from '../styled-components/Themes';
 import { Heading } from '../styled-components/Heading';
 import footer from '../../data/footer';
 
@@ -96,7 +96,7 @@ function Navbar(props) {
 export default Navbar;
 
 const StyledNavbar = styled.nav`
-  background-color: ${backgroundColor};
+  background-color: ${headerBackgroundColor};
   box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.75);
   box-sizing: border-box;
   display: flex;
