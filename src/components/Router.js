@@ -29,19 +29,19 @@ export default function Router() {
     <Suspense fallback={<div>Inhalt wird geladen...</div>}>
       <Switch>
         <Route exact path="/" component={ga(PortfolioGallery)} />
-        <Route exact path="/agb" component={ga(GeneralTerms)} />
-        <Route exact path="/ablauf" component={ga(Procedure)} />
+        {/* <Route exact path="/agb" component={ga(GeneralTerms)} /> */}
+        {/* <Route exact path="/ablauf" component={ga(Procedure)} /> */}
         <Route exact path="/akt" component={ga(PortfolioGallery)} />
         <Route exact path="/api" component={ga(PhotoAPI)} />
-        <Route exact path="/blog" component={ga(Blog)} />
-        <Route exact path="/blog/:slug" component={ga(BlogPost)} />
+        {/* <Route exact path="/blog" component={ga(Blog)} /> */}
+        {/* <Route exact path="/blog/:slug" component={ga(BlogPost)} /> */}
         <Route
           exact
           path="/datenschutzerklaerung"
           component={ga(PrivacyPolicy)}
         />
         <Route exact path="/downloads" component={ga(Downloads)} />
-        <Route exact path="/faq" component={ga(Faq)} />
+        {/* <Route exact path="/faq" component={ga(Faq)} /> */}
         <Route exact path="/gutscheine" component={ga(Vouchers)} />
         <Route exact path="/impressum" component={ga(LegalNotice)} />
         <Route exact path="/kalender" component={ga(Calendar)} />
@@ -51,10 +51,10 @@ export default function Router() {
           path="/landschaftsfotografie"
           component={ga(PortfolioGallery)}
         />
-        <Route exact path="/partnerprogramm" component={ga(Affiliate)} />
+        {/* <Route exact path="/partnerprogramm" component={ga(Affiliate)} /> */}
         <Route exact path="/portraits" render={() => <Redirect to="/" />} />
         <Route exact path="/preise" component={ga(Prices)} />
-        <Route exact path="/prints" component={ga(Prints)} />
+        {/* <Route exact path="/prints" component={ga(Prints)} /> */}
         <Route exact path="/sitemap" component={ga(Sitemap)} />
         <Route exact path="/ueber-mich" component={ga(About)} />
         <Route
