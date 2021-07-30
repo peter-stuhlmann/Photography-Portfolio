@@ -26,6 +26,12 @@ export default function Calendar() {
               href={link.href}
               linkText={link.linkText}
               title={link.title}
+              external
+              style={{
+                display: 'inline-block',
+                marginRight: '10px',
+                marginTop: '10px',
+              }}
             />
           ))}
         </div>
