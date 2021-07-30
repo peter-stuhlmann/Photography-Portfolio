@@ -33,6 +33,7 @@ const StyledHeader = styled.header`
   text-transform: uppercase;
   background-color: ${headerBackgroundColor};
   box-shadow: ${headerBoxShadow};
+  transition: 0.3s;
 
   @media (min-width: 1000px) {
     padding: 50px 20px 20px 20px;

@@ -1,6 +1,10 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
+import Brightness2Icon from '@material-ui/icons/Brightness2';
+import WbSunnyIcon from '@material-ui/icons/WbSunny';
+
 import { headerBackgroundColor, textColor } from '../styled-components/Themes';
 import { Heading } from '../styled-components/Heading';
 import footer from '../../data/footer';
@@ -8,6 +12,7 @@ import footer from '../../data/footer';
 function Navbar(props) {
   const {
     open,
+    setOpen,
     header,
     tracking,
     setTracking,
@@ -34,29 +39,38 @@ function Navbar(props) {
         />
       ) : null}
       {header.navigation.map(links => (
-        <Link key={links.href} to={links.href}>
+        <Link key={links.href} to={links.href} onClick={() => setOpen(false)}>
           {links.linkText}
         </Link>
       ))}
+      <ThemeModeToggle
+        onClick={() => {
+          setThemeMode(themeMode === 'light' ? 'dark' : 'light');
+          setOpen(false);
+        }}
+      >
+        {themeMode === 'light' ? <Brightness2Icon /> : <WbSunnyIcon />}
+      </ThemeModeToggle>
 
       {window.innerWidth < 1000 ? (
         <Fragment>
           {footer.navigation.general.list.map(link => (
-            <Link key={link.path} to={link.path}>
+            <Link key={link.path} to={link.path} onClick={() => setOpen(false)}>
               {link.linkText}
             </Link>
           ))}
           <span
-            onClick={() =>
-              setThemeMode(themeMode === 'light' ? 'dark' : 'light')
-            }
+            onClick={() => {
+              setThemeMode(themeMode === 'light' ? 'dark' : 'light');
+              setOpen(false);
+            }}
           >
             {themeModeButton}
           </span>
 
           <Heading h3 title={footer.navigation.products.heading} />
           {footer.navigation.products.list.map(link => (
-            <Link key={link.path} to={link.path}>
+            <Link key={link.path} to={link.path} onClick={() => setOpen(false)}>
               {link.linkText}
             </Link>
           ))}
@@ -75,18 +89,25 @@ function Navbar(props) {
 
           <Heading h3 title={footer.navigation.languages.heading} />
           {footer.navigation.languages.list.map(link => (
-            <Link key={link.path} to={link.path}>
+            <Link key={link.path} to={link.path} onClick={() => setOpen(false)}>
               {link.linkText}
             </Link>
           ))}
 
           <Heading h3 title={footer.navigation.legal.heading} />
           {footer.navigation.legal.list.map(link => (
-            <Link key={link.path} to={link.path}>
+            <Link key={link.path} to={link.path} onClick={() => setOpen(false)}>
               {link.linkText}
             </Link>
           ))}
-          <span onClick={() => setTracking(!tracking)}>{button}</span>
+          <span
+            onClick={() => {
+              setTracking(!tracking);
+              setOpen(false);
+            }}
+          >
+            {button}
+          </span>
         </Fragment>
       ) : null}
     </StyledNavbar>
@@ -97,6 +118,7 @@ export default Navbar;
 
 const StyledNavbar = styled.nav`
   background-color: ${headerBackgroundColor};
+  transition: 0.3s;
   box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.75);
   box-sizing: border-box;
   display: flex;
@@ -111,7 +133,6 @@ const StyledNavbar = styled.nav`
   top: 0;
   transform: ${({ open }) =>
     open ? 'translateX(0)' : 'translateX(calc(-100% - 7px))'};
-  transition: transform 0.3s ease-in-out;
   width: 444px;
   z-index: 1;
 
@@ -156,5 +177,16 @@ const StyledNavbar = styled.nav`
     text-align: center;
     transform: translateX(0);
     width: 100%;
+  }
+`;
+
+const ThemeModeToggle = styled.div`
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: top;
+
+  @media (max-width: 1000px) {
+    display: none;
   }
 `;

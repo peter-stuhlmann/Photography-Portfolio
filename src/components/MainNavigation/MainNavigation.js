@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+
 import ToggleButton from './ToggleButton';
 import Navbar from './Navbar';
 import { textColor, headerBackgroundColor } from '../styled-components/Themes';
@@ -49,6 +50,7 @@ export default function MainNavigation(props) {
 
 const StyledMainNavigation = styled.div`
   background-color: ${headerBackgroundColor};
+  transition: 0.3s;
   display: flex;
   padding: 15px;
 
