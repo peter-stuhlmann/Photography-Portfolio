@@ -71,5 +71,10 @@ const Code = styled.div`
       padding-left: 40px;
       white-space: nowrap;
     }
+
+    .fourth-level {
+      padding-left: 60px;
+      white-space: nowrap;
+    }
   }
 `;

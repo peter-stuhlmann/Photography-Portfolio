@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { codeBackground } from './styled-components/Themes';
+import { codeBackground, textColor } from './styled-components/Themes';
 
 export const APIEndpointContainer = props => {
   const { heading, description, link } = props;
@@ -23,4 +23,10 @@ const StyledAPIEndpointContainer = styled.div`
   margin: 10px 0;
   padding: 20px;
   box-sizing: border-box;
+
+  a {
+    color: ${textColor};
+    text-decoration: none;
+    font-family: monospace;
+  }
 `;
