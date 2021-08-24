@@ -185,6 +185,14 @@ const ThemeModeToggle = styled.div`
   display: inline-block;
   margin-left: 10px;
   vertical-align: top;
+  transition: 0.2s;
+  color: ${textColor};
+
+  @media (min-width: 768px) {
+    &:hover {
+      color: #b0b0b0;
+    }
+  }
 
   @media (max-width: 1000px) {
     display: none;
