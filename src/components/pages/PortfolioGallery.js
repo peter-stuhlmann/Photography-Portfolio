@@ -16,7 +16,7 @@ export default function PortfolioGallery() {
   let photos;
 
   switch (route) {
-    case '/':
+    case '/portraits':
       photos = portraits;
       document.title = portraitsPage.meta.title;
       meta('name', 'description', portraitsPage.meta.description);

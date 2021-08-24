@@ -13,6 +13,7 @@ const Procedure = lazy(() => import('./pages/Procedure'));
 const Downloads = lazy(() => import('./pages/Downloads'));
 const Faq = lazy(() => import('./pages/Faq'));
 const GeneralTerms = lazy(() => import('./pages/GeneralTerms'));
+const Home = lazy(() => import('./pages/Home'));
 const LegalNotice = lazy(() => import('./pages/LegalNotice'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const PhotoAPI = lazy(() => import('./pages/PhotoAPI'));
@@ -28,7 +29,8 @@ export default function Router() {
   return (
     <Suspense fallback={<div>Inhalt wird geladen...</div>}>
       <Switch>
-        <Route exact path="/" component={ga(PortfolioGallery)} />
+        <Route exact path="/" component={ga(Home)} />
+        <Route exact path="/portraits" component={ga(PortfolioGallery)} />
         {/* <Route exact path="/agb" component={ga(GeneralTerms)} /> */}
         {/* <Route exact path="/ablauf" component={ga(Procedure)} /> */}
         <Route exact path="/akt" component={ga(PortfolioGallery)} />
