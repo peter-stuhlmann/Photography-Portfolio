@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+import { textColor } from '../styled-components/Themes';
 import { meta } from '../../helpers/meta';
 import home from '../../data/home';
 
@@ -54,6 +55,6 @@ const CategoryItem = styled(Link)`
   }
 
   span {
-    color: #fff;
+    color: ${textColor};
   }
 `;
