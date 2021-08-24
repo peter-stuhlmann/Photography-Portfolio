@@ -42,13 +42,15 @@ export default function App() {
         <Wrapper>
           <Router />
         </Wrapper>
-        <Footer
-          themeMode={themeMode}
-          setThemeMode={setThemeMode}
-          tracking={tracking}
-          setTracking={setTracking}
-        />
-        <SubFooter />
+        <section>
+          <Footer
+            themeMode={themeMode}
+            setThemeMode={setThemeMode}
+            tracking={tracking}
+            setTracking={setTracking}
+          />
+          <SubFooter />
+        </section>
       </BrowserRouter>
     </ThemeProvider>
   );

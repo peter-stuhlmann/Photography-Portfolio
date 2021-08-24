@@ -23,6 +23,13 @@ export const GlobalStyles = createGlobalStyle`
     transition: 0.3s;
     overflow-y: scroll;
 
+    #root {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh;
+    }
+
     .external-inline-link,
     .internal-inline-link {
       color: ${textColor};
